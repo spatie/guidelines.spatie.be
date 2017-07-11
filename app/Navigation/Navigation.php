@@ -11,16 +11,6 @@ class Navigation
     /** @var \Illuminate\Support\Collection */
     private $sections;
 
-    public function __construct()
-    {
-        $this->yaml = new Yaml();
-    }
-
-    public static function create()
-    {
-        return new self();
-    }
-
     public function scanContent()
     {
         $yaml = new Yaml();
@@ -43,11 +33,6 @@ class Navigation
             });
 
         return $this;
-    }
-
-    public function menu()
-    {
-        return $this->buildMenu($this->sections);
     }
 
     public function getPage($url)
@@ -75,6 +60,11 @@ class Navigation
         
         return ! $this->sections[$section]['protected'];
     }
+    
+    public function menu()
+    {
+        return $this->buildMenu($this->sections);
+    }
 
     private function buildMenu($items)
     {
@@ -84,7 +74,7 @@ class Navigation
             }
 
             return $menu->submenu(
-                ...$this->buildSection($section)
+                ...$this->buildSectionSubmenu($section)
             );
         });
 
@@ -93,7 +83,7 @@ class Navigation
         return $menu;
     }
 
-    private function buildSection($section)
+    private function buildSectionSubmenu($section)
     {
         [$items, $title] = collect($section)->extract('items', 'section');
 
