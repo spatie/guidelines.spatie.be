@@ -5,12 +5,12 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.1.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "league/commonmark": "^0.15.4",
         "spatie/laravel-collection-macros": "^2.2",
-        "spatie/laravel-menu": "^2.1",
-        "spatie/yaml-front-matter": "^1.0"
+        "spatie/laravel-menu": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

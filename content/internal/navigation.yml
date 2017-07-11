@@ -1,4 +1,5 @@
 section: Internal
+protected: true
 items:
   - Project Setup
   - Something Else

@@ -2,6 +2,7 @@
 
 namespace App\Navigation;
 
+use Illuminate\Support\Facades\Auth;
 use Spatie\Menu\Laravel\Menu;
 use Symfony\Component\Yaml\Yaml;
 
@@ -9,6 +10,11 @@ class Navigation
 {
     /** @var \Illuminate\Support\Collection */
     private $sections;
+
+    public function __construct()
+    {
+        $this->yaml = new Yaml();
+    }
 
     public static function create()
     {
@@ -24,8 +30,16 @@ class Navigation
 
         $this->sections = collect($baseNavigation)
             ->merge($sections)
-            ->map(function ($path) use ($yaml) {
-                return $yaml->parse(file_get_contents($path));
+            ->mapWithKeys(function ($path) use ($yaml) {
+                $properties = $yaml->parse(file_get_contents($path));
+
+                return [
+                    dirname($path) => [
+                        'section' => $properties['section'] ?? null,
+                        'items' => $properties['items'],
+                        'protected' => $properties['protected'] ?? false,
+                    ],
+                ];
             });
 
         return $this;
@@ -36,13 +50,47 @@ class Navigation
         return $this->buildMenu($this->sections);
     }
 
+    public function getPage($url)
+    {
+        $path = base_path("content/{$url}.md");
+
+        if (! $this->isVisible($path)) {
+            return null;
+        }
+
+        return @file_get_contents($path) ?: null;
+    }
+
+    private function isVisible($pagePath)
+    {
+        if (Auth::check()) {
+            return true;
+        }
+
+        $section = dirname($pagePath);
+
+        if (! $this->sections->has($section)) {
+            return false;
+        }
+        
+        return ! $this->sections[$section]['protected'];
+    }
+
     private function buildMenu($items)
     {
-        return Menu::build($items, function ($menu, $section) {
+        $menu = Menu::build($items, function ($menu, $section) {
+            if ($section['protected'] && ! Auth::check()) {
+                return;
+            }
+
             return $menu->submenu(
                 ...$this->buildSection($section)
             );
         });
+
+        $menu->setActiveFromRequest();
+
+        return $menu;
     }
 
     private function buildSection($section)

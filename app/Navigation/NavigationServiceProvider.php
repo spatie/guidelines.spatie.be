@@ -23,8 +23,8 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('menu', function () {
-            return Navigation::create()->scanContent()->menu();
+        $this->app->singleton('navigation', function () {
+            return Navigation::create()->scanContent();
         });
     }
 }
