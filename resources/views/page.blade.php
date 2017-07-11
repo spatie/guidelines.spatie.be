@@ -1,9 +1,9 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row">
-        {{ $contents }}
+@component('layouts.app', [
+    'title' => $title,
+])
+    <div class="container">
+        <div class="row">
+            {{ $contents }}
+        </div>
     </div>
-</div>
-@endsection
+@endcomponent

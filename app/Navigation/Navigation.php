@@ -43,7 +43,16 @@ class Navigation
             return null;
         }
 
-        return @file_get_contents($path) ?: null;
+        $contents = @file_get_contents($path);
+
+        if (! $contents) {
+            return null;
+        }
+
+        return (object) [
+            'title' => $this->getTitle($path),
+            'contents' => $contents,
+        ];
     }
 
     private function isVisible($pagePath)
@@ -59,6 +68,19 @@ class Navigation
         }
         
         return ! $this->sections[$section]['protected'];
+    }
+
+    private function getTitle($path)
+    {
+        $slug = str_replace_last('.md', '', basename($path));
+
+        return $this->sections
+            ->pluck('items')
+            ->flatten()
+            ->keyBy(function ($title) {
+                return str_slug($title);
+            })
+            ->get($slug);
     }
     
     public function menu()

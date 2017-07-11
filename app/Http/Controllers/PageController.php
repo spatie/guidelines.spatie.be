@@ -13,7 +13,8 @@ class PageController
         abort_unless($page = app('navigation')->getPage($url), 404);
 
         return view('page', [
-            'contents' => MarkdownConverter::convert($page),
+            'title' => $page->title,
+            'contents' => MarkdownConverter::convert($page->contents),
         ]);
     }
 }
