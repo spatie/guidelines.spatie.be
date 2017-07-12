@@ -22,12 +22,20 @@ class Navigation
             ->merge($sections)
             ->mapWithKeys(function ($path) use ($yaml) {
                 $properties = $yaml->parse(file_get_contents($path));
+                $title = $properties['title'] ?? null;
+                $private = $properties['private'] ?? null;
 
                 return [
                     dirname($path) => [
-                        'section' => $properties['section'] ?? null,
-                        'items' => $properties['items'],
-                        'protected' => $properties['protected'] ?? false,
+                        'title' => $title,
+                        'items' => array_map(function ($item) use ($private, $title) {
+                            return [
+                                'title' => $item,
+                                'slug' => $title ? str_slug($title).'/'.str_slug($item) : str_slug($item),
+                                'private' => $private,
+                            ];
+                        }, $properties['items']),
+                        'private' => $private,
                     ],
                 ];
             });
@@ -37,52 +45,28 @@ class Navigation
 
     public function getPage($url)
     {
-        $path = base_path("content/{$url}.md");
+        $page = $this->pages()->where('slug', $url)->first();
 
-        if (! $this->isVisible($path)) {
+        if (! $page) {
             return null;
         }
 
-        $contents = @file_get_contents($path);
-
-        if (! $contents) {
+        if ($page['private'] && ! Auth::check()) {
             return null;
         }
 
-        return (object) [
-            'title' => $this->getTitle($path),
-            'contents' => $contents,
-        ];
+        $contents = file_get_contents(
+            base_path("content/{$page['slug']}.md")
+        );
+
+        return (object) ($page + ['contents' => $contents]);
     }
 
-    private function isVisible($pagePath)
+    private function pages()
     {
-        if (Auth::check()) {
-            return true;
-        }
-
-        $section = dirname($pagePath);
-
-        if (! $this->sections->has($section)) {
-            return false;
-        }
-        
-        return ! $this->sections[$section]['protected'];
+        return $this->sections->pluck('items')->collapse();
     }
 
-    private function getTitle($path)
-    {
-        $slug = str_replace_last('.md', '', basename($path));
-
-        return $this->sections
-            ->pluck('items')
-            ->flatten()
-            ->keyBy(function ($title) {
-                return str_slug($title);
-            })
-            ->get($slug);
-    }
-    
     public function menu()
     {
         return $this->buildMenu($this->sections);
@@ -91,7 +75,7 @@ class Navigation
     private function buildMenu($items)
     {
         $menu = Menu::build($items, function ($menu, $section) {
-            if ($section['protected'] && ! Auth::check()) {
+            if ($section['private'] && ! Auth::check()) {
                 return;
             }
 
@@ -107,11 +91,10 @@ class Navigation
 
     private function buildSectionSubmenu($section)
     {
-        [$items, $title] = collect($section)->extract('items', 'section');
+        [$items, $title] = collect($section)->extract('items', 'title');
 
         $submenu = Menu::build($items, function ($menu, $item) use ($title) {
-            $url = $title ? '/'.str_slug($title).'/'.str_slug($item) : '/'.str_slug($item);
-            $menu->link($url, $item);
+            $menu->link(url($item['slug']), $item['title']);
         });
 
         if (empty($title)) {

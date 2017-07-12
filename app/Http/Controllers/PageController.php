@@ -6,7 +6,7 @@ use App\Markdown\MarkdownConverter;
 use Illuminate\Support\HtmlString;
 use Spatie\YamlFrontMatter\Parser;
 
-class PageController
+class PageController extends Controller
 {
     public function __invoke($url)
     {

@@ -1,5 +1,5 @@
-section: Internal
-protected: true
+title: Internal
+private: true
 items:
   - Project Setup
   - Something Else
