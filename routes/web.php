@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/{url}', 'PageController')->where('url', '.*');
+Route::get('/{url}', 'PageController')->where('url', '.*')->name('page');
