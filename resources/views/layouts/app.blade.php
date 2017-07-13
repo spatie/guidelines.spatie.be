@@ -15,6 +15,8 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6194432/6145752/css/fonts.css" />
+
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body>
     {{ $slot }}
