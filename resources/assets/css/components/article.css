@@ -64,6 +64,7 @@
 }
 
 .article pre code {
+    display: block;
     font-size: 1em;
     background-color: transparent;
     border: none;
