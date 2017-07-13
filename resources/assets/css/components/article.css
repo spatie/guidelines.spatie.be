@@ -12,6 +12,7 @@
 }
 
 .article h2 {
+    position: relative;
     margin-top: calc(var(--baseline) * 2);
     margin-bottom: var(--baseline);
     font-weight: bold;
@@ -19,9 +20,25 @@
 }
 
 .article h3 {
+    position: relative;
+    margin-top: calc(var(--baseline) * 2);
+    margin-bottom: var(--baseline);
     font-weight: bold;
+    font-size: .9em;
     text-transform: uppercase;
-    font-size: .8em;
+}
+
+.article h2 .anchor-link,
+.article h3 .anchor-link {
+    display: inline-block;
+    border: none;
+    padding-left: .4em;
+    color: var(--gray);
+}
+
+.article h2 .anchor-link:before,
+.article h3 .anchor-link:before {
+    content: '#';
 }
 
 .article p {
@@ -35,32 +52,43 @@
 }
 
 .article a {
-    border-bottom: 2px solid rgba(34, 164, 201, .1);
-    color: #22a4c9;
+    border-bottom: 2px solid var(--blue-border-color);
+    color: var(--link-color);
+}
+
+.article strong {
+    font-weight: bold;
+}
+
+.article em {
+    font-style: italic;
 }
 
 .article pre {
     padding: calc(var(--baseline) / 2) 2em;
-    border-top: 1px solid #ecf1f3;
-    border-bottom: 1px solid #ecf1f3;
+    border-top: 1px solid var(--blue-border-color);
+    border-bottom: 1px solid var(--blue-border-color);
     margin: calc(var(--baseline) - 1px) -.3em;
     font-family: Menlo, "Courier New", Courier, monospace;
     font-size: .8em;
-    background-color: #f5fafb;
-    color: #586063;
+    background-color: var(--light-background-color);
+    color: var(--code-color);
     overflow: auto;
 }
 
 .article code {
     display: inline-block;
-    color: #586063;
+    background-color: #f5fafb;
     font-family: Menlo, "Courier New", Courier, monospace;
     font-size: .8em;
-    background-color: #f5fafb;
     border: 1px solid #ecf1f3;
     border-radius: 2px;
     padding: .25em;
     line-height: 1;
+}
+
+.article code:not(.hljs) {
+    color: var(--code-color);
 }
 
 .article pre code {
@@ -71,4 +99,5 @@
     border-radius: 0;
     padding: 0;
     line-height: var(--baseline);
+    overflow: visible !important; /* highlight.js override */
 }

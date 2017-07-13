@@ -18,7 +18,7 @@
 
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body>
+<body @if($background ?? false) class="waves" @endif>
     {{ $slot }}
 </body>
 </html>

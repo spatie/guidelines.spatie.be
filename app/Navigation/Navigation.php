@@ -28,6 +28,7 @@ class Navigation
                 return [
                     dirname($path) => [
                         'title' => $title,
+                        'weight' => $properties['weight'] ?? 0,
                         'items' => array_map(function ($item) use ($private, $title) {
                             return [
                                 'title' => $item,
@@ -38,7 +39,8 @@ class Navigation
                         'private' => $private,
                     ],
                 ];
-            });
+            })
+            ->sortBy('weight');
 
         return $this;
     }

@@ -1,4 +1,15 @@
 :root {
     --baseline: 27px;
     --sidebar-width: 25vw;
+
+    --blue: #007696;
+    --link-color: #22a4c9;
+    --blue-border-color: #e8f6fa;
+    --light-background-color: #f5fafb;
+    --code-color: #48595d;
+    --gray: #cbcfd0;
+    --gold: #ebddc0;
+    --red: #cc430b;
+    --almost-white: #e1eff3;
+    --subtle-blue: #b0cbd2;
 }

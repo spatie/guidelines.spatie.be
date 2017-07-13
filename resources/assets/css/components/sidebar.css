@@ -1,21 +1,11 @@
 .sidebar {
-    position: relative;
+    position: fixed;
+    overflow: auto;
+    height: 100vh;
+    width: var(--sidebar-width);
     color: white;
     text-align: right;
     padding: calc(var(--baseline) * 2) 4em calc(var(--baseline) * 2) 2em;
-}
-
-.sidebar__background {
-    content: '';
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: var(--sidebar-width);
-    background-color: #1480a1;
-    background-image: url('../images/background.jpg');
-    background-size: cover;
 }
 
 .sidebar__contents {
@@ -33,14 +23,34 @@
     height: calc(var(--baseline) * 1.5);
 }
 
+.sidebar__home {
+    color: var(--almost-white);
+    font-size: 17px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .15);
+}
+
 .sidebar__auth {
-    appearance: none;
+    margin-top: calc(var(--baseline) * 2);
     border: none;
     padding: 0;
     color: inherit;
     font: inherit;
+    outline: none;
     background: none;
-    font-size: .7em;
     cursor: pointer;
-    color: #e1eff3;
+    font-size: 25px;
+    transform-origin: center bottom;
+}
+
+.sidebar__auth:hover {
+    animation: wave .25s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    37.5% { transform: rotate(-15deg); }
+    87.5% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
 }

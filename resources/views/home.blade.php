@@ -1,7 +1,9 @@
-@component('layouts.app')
+@component('layouts.app', [
+    'background' => true,
+])
     <div class="container">
         <div class="row">
-            {{ app('navigation')->menu() }}
+            {{ app('navigation')->menu()->addClass('menu--home') }}
         </div>
     </div>
 @endcomponent
