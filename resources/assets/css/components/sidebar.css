@@ -1,5 +1,26 @@
 .sidebar {
+    position: relative;
+    color: white;
+    text-align: right;
     padding: calc(var(--baseline) * 2) 4em calc(var(--baseline) * 2) 2em;
+}
+
+.sidebar__background {
+    content: '';
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background-color: #1480a1;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+}
+
+.sidebar__contents {
+    position: relative;
+    z-index: 1;
 }
 
 .sidebar__logo {

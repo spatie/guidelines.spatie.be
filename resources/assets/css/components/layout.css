@@ -3,14 +3,8 @@
 }
 
 .layout__sidebar {
-    flex: 0 0 25vw;
+    flex: 0 0 var(--sidebar-width);
     min-height: 100vh;
-    background-color: #1480a1;
-    background-image: url('../images/background.jpg');
-    background-attachment: fixed;
-    background-size: auto 100vh; /* Needs fixing */
-    color: white;
-    text-align: right;
 }
 
 .layout__main {
