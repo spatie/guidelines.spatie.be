@@ -1,0 +1,19 @@
+.menu__item {
+    color: #e1eff3;
+}
+
+.menu__item.-active {
+    font-weight: 600;
+    color: white;
+}
+
+.menu__section {
+    margin-bottom: calc(var(--baseline) * 2);
+}
+
+.menu__subtitle {
+    color: #e1eff3;
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: 600;
+}

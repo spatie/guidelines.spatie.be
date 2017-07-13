@@ -1,0 +1,25 @@
+.sidebar {
+    padding: calc(var(--baseline) * 2) 4em calc(var(--baseline) * 2) 2em;
+}
+
+.sidebar__logo {
+    display: inline-block;
+    height: calc(var(--baseline) * 1.5);
+    margin-bottom: calc(var(--baseline) * 1.5);
+}
+
+.sidebar__logo svg {
+    height: calc(var(--baseline) * 1.5);
+}
+
+.sidebar__auth {
+    appearance: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    background: none;
+    font-size: .7em;
+    cursor: pointer;
+    color: #e1eff3;
+}

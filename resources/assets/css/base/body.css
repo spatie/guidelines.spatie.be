@@ -1,0 +1,7 @@
+body {
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", -apple-system, "Segoe UI", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: var(--baseline);
+    color: #1a1e25;
+}

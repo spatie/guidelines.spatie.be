@@ -69,24 +69,22 @@ class Navigation
 
     public function menu()
     {
-        return $this->buildMenu($this->sections);
-    }
+        $sections = $this->sections->reject(function ($section) {
+            return $section['private'] && ! Auth::check();
+        });
 
-    private function buildMenu($items)
-    {
-        $menu = Menu::build($items, function ($menu, $section) {
-            if ($section['private'] && ! Auth::check()) {
-                return;
-            }
-
+        $menu = Menu::build($sections, function ($menu, $section) {
             return $menu->submenu(
                 ...$this->buildSectionSubmenu($section)
             );
         });
 
-        $menu->setActiveFromRequest();
+        return $menu
+            ->addClass('menu')
+            ->addItemParentClass('menu__section')
+            ->setActiveClass('-active')
+            ->setActiveFromRequest();
 
-        return $menu;
     }
 
     private function buildSectionSubmenu($section)
@@ -97,10 +95,15 @@ class Navigation
             $menu->link(url($item['slug']), $item['title']);
         });
 
+        $submenu
+            ->addClass('menu__submenu')
+            ->addItemParentClass('menu__item')
+            ->setActiveClass('-active');
+
         if (empty($title)) {
             return [$submenu];
         }
 
-        return [$title, $submenu];
+        return ["<span class=menu__subtitle>{$title}</span>", $submenu];
     }
 }
