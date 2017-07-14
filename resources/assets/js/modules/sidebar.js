@@ -1,4 +1,4 @@
-import { $ } from '../util/dom';
+import { $$, on } from '../util/dom';
 
 /*
  * Sidebar
@@ -17,9 +17,9 @@ function toggleSidebar() {
 }
 
 function registerSidebarEvents() {
-    $('.js-sidebar-show').on('click', showSidebar);
-    $('.js-sidebar-hide').on('click', hideSidebar);
-    $('.js-sidebar-toggle').on('click', toggleSidebar);
+    $$('.js-sidebar-show').forEach(el => on('click', el, showSidebar));
+    $$('.js-sidebar-hide').forEach(el => on('click', el, hideSidebar));
+    $$('.js-sidebar-toggle').forEach(el => on('click', el, toggleSidebar));
 }
 
 
@@ -77,9 +77,7 @@ function registerSidebarTogglerEvents() {
  * Main export
  */
 
-function init() {
+export function init() {
     registerSidebarEvents();
     registerSidebarTogglerEvents();
 }
-
-export default { init }

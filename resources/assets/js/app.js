@@ -1,14 +1,10 @@
-import Highlight from './modules/highlight';
-import Sidebar from './modules/sidebar';
-import Turbolinks from 'turbolinks';
+const Highlight = require('./modules/highlight');
+const Sidebar = require('./modules/sidebar');
+const Turbolinks = require('turbolinks');
 
 Turbolinks.start();
 
 document.addEventListener('turbolinks:load', () => {
-    Highlight.start();
+    Highlight.init();
     Sidebar.init();
-});
-
-document.addEventListener('touchstart', () => {
-    document.documentElement.classList.add('touch');
 });

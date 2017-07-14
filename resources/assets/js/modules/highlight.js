@@ -1,4 +1,5 @@
-const hljs = require('highlight.js/lib/highlight');
+import { $$ } from '../util/dom';
+import hljs from 'highlight.js/lib/highlight';
 
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -12,8 +13,6 @@ hljs.registerLanguage('go', require('highlight.js/lib/languages/go'));
 hljs.registerLanguage('sql', require('highlight.js/lib/languages/sql'));
 hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
 
-export default {
-    start() {
-        [...document.querySelectorAll('pre code')].forEach(hljs.highlightBlock)
-    },
+export function init() {
+    $$('pre code').forEach(hljs.highlightBlock)
 };
