@@ -22,6 +22,7 @@ function registerSidebarEvents() {
     $('.js-sidebar-toggle').on('click', toggleSidebar);
 }
 
+
 /*
  * Sidebar toggler
  */
@@ -70,6 +71,7 @@ function registerSidebarTogglerEvents() {
 
     updateSidebarTogglerState({ lastChange: window.scrollY });
 }
+
 
 /*
  * Main export
