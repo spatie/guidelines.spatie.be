@@ -84,14 +84,15 @@
     box-shadow: 3px 3px 0 rgba(0, 118, 150, .4);
     transform: translateX(-50%) translateY(0);
     transition: transform .2s ease-out;
-}
-
-.sidebar__toggler:before {
-    content: 'Menu';
+    will-change: transform;
 }
 
 .-sidebar-toggler-hidden .sidebar__toggler {
     transform: translateX(-50%) translateY(calc(100% + 40px));
+}
+
+.sidebar__toggler:before {
+    content: 'Menu';
 }
 
 .-mobile-sidebar-visible .sidebar__toggler:before {
@@ -109,6 +110,7 @@
         transform: translateX(100vw);
         opacity: .8;
         transition: all .15s ease-out;
+        will-change: transform, opacity;
     }
 
     .-mobile-sidebar-visible .sidebar {
