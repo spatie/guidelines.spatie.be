@@ -45,7 +45,7 @@ function applySidebarTogglerState(prevState) {
 
     // If the scroll position hasn't changed more than 40px in a single 
     // direction, do nothing.
-    if (Math.abs(y - prevState.lastChange) < 40) {
+    if (Math.abs(y - prevState.lastChange) < 60) {
         return prevState;
     }
 
