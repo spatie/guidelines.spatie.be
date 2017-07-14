@@ -1,6 +1,6 @@
 .article {
     max-width: 55em;
-    padding: calc(var(--baseline) * 2) 3em;
+    padding: var(--double-baseline) 3em;
 }
 
 .article h1 {
@@ -13,7 +13,7 @@
 
 .article h2 {
     position: relative;
-    margin-top: calc(var(--baseline) * 2);
+    margin-top: var(--double-baseline);
     margin-bottom: var(--baseline);
     font-weight: bold;
     font-size: 1.2em;
@@ -21,7 +21,7 @@
 
 .article h3 {
     position: relative;
-    margin-top: calc(var(--baseline) * 2);
+    margin-top: var(--double-baseline);
     margin-bottom: var(--baseline);
     font-weight: bold;
     font-size: .9em;
@@ -65,7 +65,7 @@
 }
 
 .article pre {
-    padding: calc(var(--baseline) / 2) 2em;
+    padding: var(--half-baseline) 2em;
     border-top: 1px solid var(--blue-border-color);
     border-bottom: 1px solid var(--blue-border-color);
     margin: calc(var(--baseline) - 1px) -.3em;

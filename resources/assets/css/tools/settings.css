@@ -1,5 +1,8 @@
 :root {
     --baseline: 27px;
+    --double-baseline: calc(var(--baseline) * 2);
+    --half-baseline: calc(var(--baseline) / 2);
+
     --sidebar-width: 25vw;
 
     --blue: #007696;

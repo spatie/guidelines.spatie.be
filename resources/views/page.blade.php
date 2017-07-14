@@ -1,20 +1,19 @@
 @component('layouts.app', [
     'title' => $title,
 ])
-    <nav class="sidebar waves">
-        <div class="sidebar__background"></div>
-        <div class="sidebar__contents">
+    <section class="sidebar waves">
+        <nav class="sidebar__contents">
             <div class="sidebar__logo">
                 <a href="https://spatie.be" target="spatie">
                     @include('svg.logo')
                 </a>
             </div>
-
             <div class="sidebar__home">
                 <a href="{{ url('/') }}">Home</a>
             </div>
             {{ app('navigation')->menu() }}
-
+        </nav>
+        <footer class="sidebar__footer">
             @if(Auth::check())
                 <form method="POST" action="{{ route('logout') }}">
                     {{ csrf_field() }}
@@ -23,8 +22,11 @@
                     </button>
                 </form>
             @endif
-        </div>
-    </nav>
+            <a href="https://spatie.be" target="spatie">
+                © spatie.be, Antwerp
+            </a>
+        </footer>
+    </section>
     <main class="main">
         <div class="article">
             {{ $contents }}

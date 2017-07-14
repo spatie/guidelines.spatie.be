@@ -1,0 +1,27 @@
+.home {
+    color: white;
+    width: 40em;
+    margin: calc(var(--baseline) * 3) auto var(--baseline);
+}
+
+.home__logo {
+    width: 6em;
+    margin-bottom: var(--double-baseline);
+}
+
+.home__title {
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: var(--double-baseline);
+    border-bottom: 3px solid rgba(255, 255, 255, .1);
+    margin-bottom: var(--double-baseline);
+}
+
+.home__credits {
+    color: var(--subtle-blue);
+    margin-top: var(--baseline);
+    border-top: 3px solid rgba(255, 255, 255, .1);
+    padding-top: var(--baseline);
+    font-size: .8em;
+}

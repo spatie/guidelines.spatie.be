@@ -11,7 +11,7 @@
 }
 
 .menu__section {
-    margin-bottom: calc(var(--baseline) * 2);
+    margin-bottom: var(--double-baseline);
 }
 
 .menu__section:last-child {
@@ -21,6 +21,7 @@
 .menu__subtitle {
     position: relative;
     display: inline-block;
+    color: white;
     background-color: rgba(0, 0, 0, .075);
     padding: 0 .5em;
     margin-right: -.1em;
@@ -30,3 +31,27 @@
     font-weight: 500;
     top: calc(var(--baseline) * -.33);
 }
+
+.menu--home {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu--home .menu__item {
+    color: white;
+}
+
+.menu--home .menu__subtitle {
+    margin-left: -.1em;
+}
+
+.menu--home .menu__section {
+    flex-basis: 50%;
+    margin-bottom: calc(var(--baseline) * 1.5);
+}
+
+.menu--home .menu__section:first-child {
+    flex-basis: 100%;
+    border: none;
+}
+

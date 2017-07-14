@@ -1,11 +1,14 @@
 .sidebar {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: auto;
     height: 100vh;
     width: var(--sidebar-width);
     color: white;
     text-align: right;
-    padding: calc(var(--baseline) * 2) 4em calc(var(--baseline) * 2) 2em;
+    padding: var(--double-baseline) 3em var(--baseline) 2em;
 }
 
 .sidebar__contents {
@@ -29,8 +32,14 @@
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .15);
 }
 
+.sidebar__footer {
+    margin-top: var(--double-baseline);
+    font-size: .8em;
+    color: var(--subtle-blue);
+}
+
 .sidebar__auth {
-    margin-top: calc(var(--baseline) * 2);
+    margin-bottom: var(--half-baseline);
     border: none;
     padding: 0;
     color: inherit;
