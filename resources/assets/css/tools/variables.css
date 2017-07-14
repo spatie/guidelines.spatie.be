@@ -4,6 +4,8 @@
     --half-baseline: calc(var(--baseline) / 2);
 
     --sidebar-width: 25vw;
+    --z-sidebar: 5;
+    --z-max: 10;
 
     --blue: #007696;
     --link-color: #22a4c9;
@@ -16,3 +18,5 @@
     --almost-white: #e1eff3;
     --subtle-blue: #b0cbd2;
 }
+
+@custom-media --collapse (max-width: 800px);

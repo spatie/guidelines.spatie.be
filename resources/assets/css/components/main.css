@@ -1,3 +1,9 @@
 .main {
     margin-left: var(--sidebar-width);
 }
+
+@media (max-width: 800px) {
+    .main {
+        margin: 0;
+    }
+}

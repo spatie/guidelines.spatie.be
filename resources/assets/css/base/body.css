@@ -6,3 +6,12 @@ body {
     color: #1a1e25;
 }
 
+@media (--collapse) {
+    body {
+        font-size: 16px;
+    }
+
+    .-mobile-sidebar-visible body {
+        overflow: hidden;
+    }
+}

@@ -25,6 +25,7 @@
     background-color: rgba(0, 0, 0, .075);
     padding: 0 .5em;
     margin-right: -.1em;
+    margin-left: -.1em;
     border-radius: 2px;
     font-size: .8em;
     text-transform: uppercase;
@@ -41,10 +42,6 @@
     color: white;
 }
 
-.menu--home .menu__subtitle {
-    margin-left: -.1em;
-}
-
 .menu--home .menu__section {
     flex-basis: 50%;
     margin-bottom: calc(var(--baseline) * 1.5);
@@ -54,4 +51,3 @@
     flex-basis: 100%;
     border: none;
 }
-

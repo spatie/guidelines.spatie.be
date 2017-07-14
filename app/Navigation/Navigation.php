@@ -86,7 +86,6 @@ class Navigation
             ->addItemParentClass('menu__section')
             ->setActiveClass('-active')
             ->setActiveFromRequest();
-
     }
 
     private function buildSectionSubmenu($section)
@@ -99,7 +98,7 @@ class Navigation
 
         $submenu
             ->addClass('menu__submenu')
-            ->addItemParentClass('menu__item')
+            ->addItemParentClass('menu__item js-sidebar-hide')
             ->setActiveClass('-active');
 
         if (empty($title)) {

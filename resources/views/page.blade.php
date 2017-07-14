@@ -27,6 +27,7 @@
             </a>
         </footer>
     </section>
+    <span class="sidebar__toggler js-sidebar-toggle" title="Toggle menu"></span>
     <main class="main">
         <div class="article">
             {{ $contents }}
