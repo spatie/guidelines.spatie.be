@@ -1,5 +1,6 @@
 import { $$, on } from '../util/dom';
 
+
 /*
  * Sidebar
  */
@@ -63,7 +64,7 @@ function applySidebarTogglerState(prevState) {
 function registerSidebarTogglerEvents() {
     const updateSidebarTogglerState = state => {
         const newState = applySidebarTogglerState(state);
-        
+
         requestAnimationFrame(
             () => updateSidebarTogglerState(newState)
         );
