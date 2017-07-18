@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
+        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
 
         /*
          * Application Service Providers...
