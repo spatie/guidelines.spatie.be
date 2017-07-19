@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
+Route::get('login', 'Auth\LoginController@redirectToProvider')->name('login');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/', 'HomeController@index')->name('home');

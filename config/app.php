@@ -170,6 +170,9 @@ return [
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        \Spatie\Tail\TailServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -229,6 +232,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

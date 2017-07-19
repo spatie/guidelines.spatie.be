@@ -3,51 +3,51 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Socialite;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
     /**
-     * Attempt to log the user into the application.
+     * Redirect the user to the Google authentication page.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return bool
+     * @return Response
      */
-    protected function attemptLogin(Request $request)
+    public function redirectToProvider()
     {
-        return $this->guard()->attempt(
-            $this->credentials($request), true
-        );
+        return Socialite::driver('google')
+            ->scopes(['email'])
+            ->redirect();
+    }
+
+    /**
+     * Obtain the user information from Google.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+        $user = Socialite::driver('google')->user();
+
+        abort_unless(ends_with($user->getEmail(), 'spatie.be'), 403);
+
+        $authenticatableUser = User::findOrCreate($user);
+
+        auth()->login($authenticatableUser, true);
+
+        return redirect('/');
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        return redirect('/');
     }
 }

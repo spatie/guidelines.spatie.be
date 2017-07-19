@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Socialite\Contracts\User as SocialiteUser;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function findOrCreate(SocialiteUser $socialiteUser): User
+    {
+        if (! $user = User::whereEmail($socialiteUser->getEmail())->first()) {
+            $user = static::create([
+                'email' => $socialiteUser->getEmail(),
+                'name' => $socialiteUser->getName(),
+                'password' => bcrypt(str_random()),
+            ]);
+        }
+
+        return $user;
+    }
 }
