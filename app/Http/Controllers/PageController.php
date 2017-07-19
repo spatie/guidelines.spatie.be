@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Markdown\MarkdownConverter;
-use Illuminate\Support\HtmlString;
-use Spatie\YamlFrontMatter\Parser;
 
 class PageController extends Controller
 {
