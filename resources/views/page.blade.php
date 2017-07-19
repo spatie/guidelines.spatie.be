@@ -14,14 +14,14 @@
             {{ app('navigation')->menu() }}
         </nav>
         <footer class="sidebar__footer">
-            @if(Auth::check())
+            @auth('web')
                 <form method="POST" action="{{ route('logout') }}">
                     {{ csrf_field() }}
                     <button type="submit" class="sidebar__auth" title="Log out">
                         👋
                     </button>
                 </form>
-            @endif
+            @endauth
             <a href="https://spatie.be" target="spatie">
                 © spatie.be, Antwerp
             </a>
