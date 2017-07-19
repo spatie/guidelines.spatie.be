@@ -1,5 +1,5 @@
 :root {
-    --baseline: 27px;
+    --baseline: 28px;
     --double-baseline: calc(var(--baseline) * 2);
     --half-baseline: calc(var(--baseline) / 2);
 
@@ -7,6 +7,7 @@
     --z-sidebar: 5;
     --z-max: 10;
 
+    --text-color: #1a1e25;
     --blue: #007696;
     --link-color: #22a4c9;
     --blue-border-color: #e8f6fa;

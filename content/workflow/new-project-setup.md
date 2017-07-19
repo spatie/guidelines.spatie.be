@@ -1,4 +1,4 @@
-# New Project
+# New Project Setup
 
 ## Git
 
@@ -25,10 +25,10 @@ Our Blender sites use a few third party services. Here's a checklist on what nee
 
 Unless specified otherwise, use the website's domain name as it's identifier (API key name, property name, etc.)
 
-1. Create a new *Sendgrid* API key
-1. Create a new *Google Analytics* property
-1. Create a new *Google Tag Manager* container
-  - Create a constant containing the Universal Analytics ID
-  - Set up a tag for Google Analytics pageviews
-1. Set up *Bugsnag* for Laravel
-1. Set up *Bugsnag* for JavaScript
+1. Create a new **Sendgrid** API key
+1. Create a new **Google Analytics** property
+1. Create a new **Google Tag Manager** container
+    - Create a constant containing the Universal Analytics ID
+    - Set up a tag for Google Analytics pageviews
+1. Set up **Bugsnag** for Laravel
+1. Set up **Bugsnag** for JavaScript

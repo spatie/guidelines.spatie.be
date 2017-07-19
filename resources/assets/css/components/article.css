@@ -15,16 +15,22 @@
     position: relative;
     margin-top: var(--double-baseline);
     margin-bottom: var(--baseline);
-    font-weight: bold;
     font-size: 1.2em;
+    font-weight: bold;
+    color: color(var(--text-color) lightness(15%));
+}
+
+.article h1 + h2 {
+    margin-top: calc(var(--baseline) * 1.5);
 }
 
 .article h3 {
     position: relative;
     margin-top: var(--double-baseline);
     margin-bottom: var(--baseline);
-    font-weight: bold;
     font-size: .9em;
+    font-weight: bold;
+    color: color(var(--text-color) lightness(15%));
     text-transform: uppercase;
 }
 
@@ -45,10 +51,54 @@
     margin-bottom: var(--baseline);
 }
 
-.article ul {
-    list-style: disc;
+.article ul,
+.article ol {
     margin-bottom: var(--baseline);
+    list-style: none;
     margin-left: 1.5em;
+}
+
+.article li {
+    position: relative;
+    margin-bottom: var(--half-baseline);
+}
+
+.article li:last-child {
+    margin-bottom: 0;
+}
+
+.article ol {
+    counter-reset: ol;
+}
+
+.article ol > li:before,
+.article ul > li:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    color: color(var(--text-color) lightness(65%));
+}
+
+.article ol > li:before {
+    counter-increment: ol;
+    content: counter(ol) ". ";
+    left: -1.5em;
+    font-size: 14px;
+}
+
+.article ul > li:before {
+    left: -1em;
+    content: "•";
+}
+
+.article ul ul,
+.article ul ol,
+.article ol ol,
+.article ol ul {
+    margin-left: 2.2em;
+    margin-top: var(--half-baseline);
+    margin-bottom: 0;
 }
 
 .article a {
@@ -58,6 +108,7 @@
 
 .article strong {
     font-weight: bold;
+    color: color(var(--text-color) lightness(15%));
 }
 
 .article em {

@@ -31,6 +31,7 @@
     text-transform: uppercase;
     font-weight: 500;
     top: calc(var(--baseline) * -.33);
+    line-height: var(--baseline);
 }
 
 .menu--home {

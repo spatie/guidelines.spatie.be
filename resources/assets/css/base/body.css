@@ -3,7 +3,7 @@ body {
     font-weight: 300;
     font-size: 18px;
     line-height: var(--baseline);
-    color: #1a1e25;
+    color: var(--text-color);
 }
 
 @media (--collapse) {
