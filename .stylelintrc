@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "resources/assets/css/vendor/*",
+  "rules": {
+      "indentation": [4],
+      "at-rule-empty-line-before": null,
+      "declaration-empty-line-before": "never",
+      "number-leading-zero": null,
+      "selector-pseudo-element-colon-notation": "single",
+      "block-opening-brace-newline-after": "always"
+    }
+}

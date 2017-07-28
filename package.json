@@ -3,24 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "webpack --hide-modules --progress",
-    "watch": "webpack --watch --hide-modules --progress",
-    "prod": "webpack -p --hide-modules"
+    "css-lint": "stylelint resources/assets/css/**/*.css --fix -r",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0",
     "highlight.js": "^9.1.0",
+    "laravel-mix": "^1.4.0",
     "postcss": "^5.0.19",
     "postcss-cssnext": "^2.9.0",
     "postcss-easy-import": "^2.0.0",
     "postcss-loader": "^1.2.2",
-    "turbolinks": "^5.0.0",
-    "url-loader": "^0.5.9",
-    "webpack": "^2.2.0",
-    "webpack-manifest-plugin": "^1.1.2"
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^16.0.0",
+    "turbolinks": "^5.0.0"
   }
 }
