@@ -12,6 +12,7 @@ class PageController extends Controller
 
         return view('page', [
             'title' => $page->title,
+            'editUrl' => $page->edit_url,
             'contents' => MarkdownConverter::convert($page->contents),
         ]);
     }

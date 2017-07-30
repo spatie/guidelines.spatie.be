@@ -32,5 +32,8 @@
         <div class="article">
             {{ $contents }}
         </div>
+        <footer class="article__footer">
+            <p>Spotted a typo? See something wrong? <a href="{{ $editUrl }}" target="_blank">Edit this page on GitHub</a>.</p>
+        </footer>
     </main>
 @endcomponent

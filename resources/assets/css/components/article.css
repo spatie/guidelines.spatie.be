@@ -1,6 +1,6 @@
 .article {
     max-width: 55em;
-    padding: var(--double-baseline);
+    padding: var(--double-baseline) var(--double-baseline) var(--baseline);
 }
 
 @media (--almost-collapse) {
@@ -164,4 +164,15 @@
     padding: 0;
     line-height: var(--baseline);
     overflow: visible !important; /* highlight.js override */
+}
+
+.article__footer {
+    font-size: .7em;
+    color: var(--gray);
+    max-width: 55em;
+    padding: 0 var(--double-baseline) var(--baseline);
+
+    & a {
+        text-decoration: underline;
+    }
 }

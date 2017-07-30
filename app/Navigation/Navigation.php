@@ -29,10 +29,12 @@ class Navigation
                         'title' => $title,
                         'weight' => $properties['weight'] ?? 0,
                         'items' => array_map(function ($item) use ($private, $title) {
+                            $slug = $title ? str_slug($title).'/'.str_slug($item) : str_slug($item);
                             return [
                                 'title' => $item,
-                                'slug' => $title ? str_slug($title).'/'.str_slug($item) : str_slug($item),
+                                'slug' => $slug,
                                 'private' => $private,
+                                'edit_url' => "https://github.com/spatie/guidelines.spatie.be/edit/master/content/{$slug}.md",
                             ];
                         }, $properties['items']),
                         'private' => $private,
