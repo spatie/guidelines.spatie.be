@@ -32,7 +32,7 @@
 }
 
 .home__credits {
-    margin-top: var(--baseline);
-    padding-top: var(--baseline);
-    font-size: .8em;
+    padding: var(--double-baseline) 0 var(--baseline);
+    font-size: .6em;
+    color: var(--gray);
 }

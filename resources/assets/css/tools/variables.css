@@ -4,11 +4,11 @@
     --triple-baseline: calc(var(--baseline) * 3);
     --half-baseline: calc(var(--baseline) / 2);
 
-    --sidebar-width: 25vw;
+    --sidebar-width: 30vw;
     --z-sidebar: 5;
     --z-max: 10;
 
-    --text-color: #1a1e25;
+    --text-color: #303745;
     --blue: #007696;
     --link-color: #22a4c9;
     --blue-border-color: #e8f6fa;
