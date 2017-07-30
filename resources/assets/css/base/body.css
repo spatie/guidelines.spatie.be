@@ -4,6 +4,7 @@ body {
     font-size: 18px;
     line-height: var(--baseline);
     color: var(--text-color);
+    min-height: 100vh;
 }
 
 @media (--collapse) {

@@ -1,27 +1,38 @@
-.home {
+.home__header {
     color: white;
-    width: 40em;
-    margin: calc(var(--baseline) * 3) auto var(--baseline);
+    padding: var(--triple-baseline) 0 var(--triple-baseline);
+    margin-bottom: var(--double-baseline);
+}
+
+.home__header__inner {
+    max-width: 45em;
+    padding: 0 var(--baseline);
+    margin: 0 auto;
 }
 
 .home__logo {
     width: 6em;
-    margin-bottom: var(--double-baseline);
+    margin-bottom: var(--baseline);
 }
 
 .home__title {
     font-size: 3em;
     font-weight: bold;
     line-height: 1;
-    padding-bottom: var(--double-baseline);
-    border-bottom: 3px solid rgba(255, 255, 255, .1);
+}
+
+.home__meat {
+    max-width: 45em;
+    padding: 0 var(--baseline);
+    margin: 0 auto;
+}
+
+.home__introduction {
     margin-bottom: var(--double-baseline);
 }
 
 .home__credits {
-    color: var(--subtle-blue);
     margin-top: var(--baseline);
-    border-top: 3px solid rgba(255, 255, 255, .1);
     padding-top: var(--baseline);
     font-size: .8em;
 }

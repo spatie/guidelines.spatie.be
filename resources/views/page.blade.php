@@ -11,7 +11,7 @@
             <div class="sidebar__home">
                 <a href="{{ url('/') }}">Home</a>
             </div>
-            {{ app('navigation')->menu() }}
+            {{ app('navigation')->menu()->addClass('menu--sidebar') }}
         </nav>
         <footer class="sidebar__footer">
             @auth('web')

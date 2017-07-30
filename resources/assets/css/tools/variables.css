@@ -1,6 +1,7 @@
 :root {
     --baseline: 28px;
     --double-baseline: calc(var(--baseline) * 2);
+    --triple-baseline: calc(var(--baseline) * 3);
     --half-baseline: calc(var(--baseline) / 2);
 
     --sidebar-width: 25vw;
