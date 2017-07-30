@@ -100,6 +100,12 @@
     content: 'Close';
 }
 
+@media (--almost-collapse) {
+    .sidebar {
+        padding: var(--double-baseline) var(--baseline) var(--baseline);
+    }
+}
+
 @media (--collapse) {
     .sidebar__toggler {
         display: block;
@@ -110,6 +116,7 @@
         text-align: left;
         transform: translateX(100vw);
         opacity: .8;
+        padding: var(--double-baseline) var(--double-baseline) var(--baseline);
         transition: all .15s ease-out;
         will-change: transform, opacity;
     }

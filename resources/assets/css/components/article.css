@@ -1,6 +1,19 @@
 .article {
     max-width: 55em;
-    padding: var(--double-baseline) 3em;
+    padding: var(--double-baseline);
+}
+
+@media (--almost-collapse) {
+    .article {
+        padding: var(--double-baseline) var(--baseline);
+    }
+}
+
+@media (--collapse) {
+    .article {
+        max-width: 100%;
+        padding: var(--baseline);
+    }
 }
 
 .article h1 {
@@ -151,11 +164,4 @@
     padding: 0;
     line-height: var(--baseline);
     overflow: visible !important; /* highlight.js override */
-}
-
-@media (--collapse) {
-    .article {
-        max-width: 100%;
-        padding: var(--baseline);
-    }
 }
