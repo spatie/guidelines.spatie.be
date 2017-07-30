@@ -21,7 +21,7 @@
     --broken-gray: #ede8e0;
     --red: #cc430b;
     --almost-white: #e1eff3;
-    --subtle-blue: #b0cbd2;
+    --subtle-blue: #f4f7f7;
 }
 
 @custom-media --almost-collapse (max-width: 1000px);
