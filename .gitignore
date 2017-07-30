@@ -1,10 +1,6 @@
 /node_modules
-/public/css
-/public/images
-/public/js
 /public/hot
 /public/storage
-/public/mix-manifest.json
 /storage/*.key
 /vendor
 /.idea
