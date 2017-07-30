@@ -12,18 +12,18 @@
                 </h1>
             </div>
         </header>
-        <main class="home__meat">
-            <section class="home__introduction">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia excepturi explicabo mollitia ducimus ad maiores voluptatum distinctio et quidem! Molestias ullam autem repellat quia aut nemo porro ab eaque fuga.</p>
-            </section>
-            <nav>
+        <section class="home__introduction">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia excepturi explicabo mollitia ducimus ad maiores voluptatum distinctio et quidem! Molestias ullam autem repellat quia aut nemo porro ab eaque fuga.</p>
+        </section>
+        <nav class="home__nav">
+            <div class="home__nav__inner">
                 {{ app('navigation')->menu()->addClass('menu--home') }}
-            </nav>
-            <footer class="home__credits">
-                <a href="https://spatie.be" target="spatie">
-                    © spatie.be, Antwerp
-                </a>
-            </footer>
-        </main>
+            </div>
+        </nav>
+        <footer class="home__credits">
+            <a href="https://spatie.be" target="spatie">
+                © spatie.be, Antwerp
+            </a>
+        </footer>
     </section>
 @endcomponent

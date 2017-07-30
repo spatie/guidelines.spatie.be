@@ -15,11 +15,9 @@ class Navigation
     {
         $yaml = new Yaml();
 
-        // $baseNavigation = base_path('content/navigation.yml');
         $sections = glob(base_path('content/**/navigation.yml'));
 
         $this->sections = collect()
-            // ->push($baseNavigation)
             ->merge($sections)
             ->mapWithKeys(function ($path) use ($yaml) {
                 $properties = $yaml->parse(file_get_contents($path));

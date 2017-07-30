@@ -1,13 +1,12 @@
 .home__header {
     color: white;
     padding: var(--triple-baseline) 0 var(--triple-baseline);
-    margin-bottom: var(--double-baseline);
 }
 
 .home__header__inner {
-    max-width: 45em;
-    padding: 0 var(--baseline);
+    max-width: var(--container-width);
     margin: 0 auto;
+    padding: 0 var(--baseline);
 }
 
 .home__logo {
@@ -21,18 +20,26 @@
     line-height: 1;
 }
 
-.home__meat {
-    max-width: 45em;
+.home__introduction {
+    max-width: var(--container-width);
+    margin: var(--triple-baseline) auto;
     padding: 0 var(--baseline);
-    margin: 0 auto;
 }
 
-.home__introduction {
-    margin-bottom: var(--double-baseline);
+.home__nav {
+    background-color: var(--broken-white);
+}
+
+.home__nav__inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--double-baseline) var(--baseline) var(--baseline);
 }
 
 .home__credits {
-    padding: var(--double-baseline) 0 var(--baseline);
+    max-width: var(--container-width);
+    margin: var(--double-baseline) auto var(--baseline);
     font-size: .6em;
     color: var(--gray);
+    padding: 0 var(--baseline);
 }

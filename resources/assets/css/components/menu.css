@@ -22,12 +22,19 @@
         flex-basis: calc(50% - var(--baseline));
         margin-right: var(--baseline);
         margin-bottom: var(--baseline);
-        padding: var(--baseline);
-        border: 2px solid var(--blue-border-color);
+        padding: calc(var(--baseline) - 6px) var(--baseline) var(--baseline);
+        border: 2px solid var(--broken-gray);
+        border-radius: 2px;
+        background-color: white;
 
         &:nth-child(even) {
             margin-right: 0;
         }
+    }
+
+    & .menu__subtitle {
+        font-size: .7em;
+        color: #8e8b87;
     }
 }
 
