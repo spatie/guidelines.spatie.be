@@ -5,7 +5,7 @@
     --half-baseline: calc(var(--baseline) / 2);
 
     --sidebar-width: 30vw;
-    --container-width: 700px;
+    --container-width: 760px;
     --z-sidebar: 5;
     --z-max: 10;
 
