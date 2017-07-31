@@ -23,7 +23,7 @@
 .home__introduction {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: calc(var(--baseline) * 4) var(--baseline) var(--triple-baseline);
+    padding: var(--triple-baseline) var(--baseline) var(--double-baseline);
 }
 
 .home__introduction p {
@@ -35,18 +35,18 @@
     line-height: calc(var(--baseline) * 1.2); 
 }
 
-.home__main {
+.home__index {
     background-color: var(--broken-white);
     border-top: 1px solid var(--broken-gray);
 }
 
-.home__main__inner {
+.home__index__inner {
     max-width: calc(var(--container-width) + var(--baseline) * 2);
     margin: 0 auto;
     padding: var(--triple-baseline) var(--baseline) var(--baseline);
 }
 
-.home__main__footer {
+.home__index__footer {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--baseline) var(--baseline);

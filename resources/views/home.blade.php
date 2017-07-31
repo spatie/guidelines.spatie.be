@@ -23,11 +23,11 @@
                 Vestibulum ultrices velit ut odio cursus, at imperdiet orci rutrum. Nunc eu lacus id nisl mollis sollicitudin. Praesent felis leo, ornare non est et, tincidunt dapibus augue. Sed metus metus, laoreet non porta eget, semper vitae odio.
             </p>
         </section>
-        <nav class="home__main">
-            <div class="home__main__inner">
+        <nav class="home__index">
+            <div class="home__index__inner">
                 {{ app('navigation')->menu()->addClass('menu--home') }}
             </div>
-            <footer class="home__main__footer">
+            <footer class="home__index__footer">
                 <a href="https://spatie.be" target="spatie">
                     © spatie.be, Antwerp
                 </a>
