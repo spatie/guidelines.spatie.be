@@ -176,3 +176,9 @@
         text-decoration: underline;
     }
 }
+
+@media (--almost-collapse) {
+    .article__footer {
+        padding: 0 var(--baseline) var(--baseline);
+    }
+}

@@ -1,6 +1,12 @@
 .home__header {
     color: white;
-    padding: var(--triple-baseline) 0 var(--triple-baseline);
+    padding: var(--triple-baseline) 0;
+}
+
+@media (--almost-collapse) {
+    .home__header {
+        padding: var(--double-baseline) 0;
+    }
 }
 
 .home__header__inner {
@@ -26,6 +32,12 @@
     padding: var(--triple-baseline) var(--baseline) var(--double-baseline);
 }
 
+@media (--almost-collapse) {
+    .home__introduction {
+        padding: var(--double-baseline) var(--baseline) var(--baseline);
+    }
+}
+
 .home__introduction p {
     margin-bottom: var(--baseline);
 }
@@ -44,6 +56,12 @@
     max-width: calc(var(--container-width) + var(--baseline) * 2);
     margin: 0 auto;
     padding: var(--triple-baseline) var(--baseline) var(--baseline);
+}
+
+@media (--almost-collapse) {
+    .home__index__inner {
+        padding: var(--double-baseline) var(--baseline) var(--baseline);
+    }
 }
 
 .home__index__footer {
