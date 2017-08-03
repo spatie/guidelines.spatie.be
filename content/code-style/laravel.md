@@ -19,13 +19,8 @@ Configuration keys must use snake_case.
 
 ```php
 // config/pdf-generator.php
-
-<?php
-
 return [
-
     'chrome_path' => env('CHROME_PATH'),
-    
 ];
 ```
 
