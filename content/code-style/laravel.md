@@ -130,6 +130,16 @@ class OpenSourceController
 }
 ```
 
+## Validation rules
+
+All custom validation rules most use snake_case:
+
+```php
+Validator::extend('organisation_type', function ($attribute, $value) {
+    return OrganisationType::isValid($value);
+});
+```
+
 ## Blade
 
 Indent using four space.
