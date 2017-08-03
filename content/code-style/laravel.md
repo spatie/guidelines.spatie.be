@@ -170,3 +170,5 @@ Gate::define('editPost', function ($user, $post) {
     </a>
 @endcan
 ```
+
+When naming a viewing permission do not use `see`, `show` but `view`.
