@@ -15,14 +15,15 @@ class Navigation
     {
         $yaml = new Yaml();
 
-        $sections = glob(base_path('content/**/navigation.yml'));
-
-        $this->sections = collect()
-            ->merge($sections)
+        $this->sections = collect([
+            glob(base_path('content/private/**/navigation.yml')),
+            glob(base_path('content/**/navigation.yml')),
+        ])
+            ->flatten()
             ->mapWithKeys(function ($path) use ($yaml) {
                 $properties = $yaml->parse(file_get_contents($path));
                 $title = $properties['title'] ?? null;
-                $private = $properties['private'] ?? null;
+                $private = str_contains($path, '/content/private/');
 
                 return [
                     dirname($path) => [
@@ -34,6 +35,7 @@ class Navigation
                                 'title' => $item,
                                 'slug' => $slug,
                                 'private' => $private,
+                                'path' => $private ? "/private/{$slug}.md" : "{$slug}.md",
                                 'edit_url' => "https://github.com/spatie/guidelines.spatie.be/edit/master/content/{$slug}.md",
                             ];
                         }, $properties['items']),
@@ -59,7 +61,7 @@ class Navigation
         }
 
         $contents = file_get_contents(
-            base_path("content/{$page['slug']}.md")
+            base_path("content/{$page['path']}")
         );
 
         return (object) ($page + ['contents' => $contents]);
