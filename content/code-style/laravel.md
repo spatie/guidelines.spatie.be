@@ -166,4 +166,4 @@ Gate::define('editPost', function ($user, $post) {
 @endcan
 ```
 
-When naming a viewing permission do not use `see`, `show` but `view`.
+Try to name abilities using default CRUD words. One exception: replace `show` with `view`. A server shows a resource, a user views it.
