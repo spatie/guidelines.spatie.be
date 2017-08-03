@@ -19,13 +19,8 @@ Configuration keys must use snake_case.
 
 ```php
 // config/pdf-generator.php
-
-<?php
-
 return [
-
     'chrome_path' => env('CHROME_PATH'),
-    
 ];
 ```
 
@@ -170,3 +165,5 @@ Gate::define('editPost', function ($user, $post) {
     </a>
 @endcan
 ```
+
+When naming a viewing permission do not use `see`, `show` but `view`.
