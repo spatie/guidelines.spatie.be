@@ -1,8 +1,7 @@
 # This .gitignore file exists so we don't accidentally
 # push private sections to the public repository.
 
-*
-!.gitignore
-!code-style/
-!misc/
-!workflow/
+/*
+!/code-style
+!/misc
+!/workflow

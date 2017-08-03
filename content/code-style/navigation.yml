@@ -1,5 +1,7 @@
 title: Code Style
 weight: 2
 items:
+  - PHP
+  - Laravel
   - CSS
   - JavaScript
