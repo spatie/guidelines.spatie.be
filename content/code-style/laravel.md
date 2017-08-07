@@ -4,7 +4,7 @@ First and foremost, Laravel provides the most value when you write things things
 
 ## General PHP Rules
 
-Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/). Generally speaking, eveything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
+Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/). Generally speaking, everything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
 
 ## Configuration
 
