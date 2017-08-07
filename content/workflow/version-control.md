@@ -38,15 +38,15 @@ Ideally, rebase your branch regularly to reduce the chance of merge conflicts.
 
 ## Commits
 
-There's not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project's gone live, descriptive commit messages are required.
+There's not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project's gone live, descriptive commit messages are required. Always use present tense in commit messages.
 
 - Non-descriptive: `wip`, `commit`, `a lot`, `solid`
-- Descriptive: `Updated deps`, `Fixed vat calculation in delivery costs`
+- Descriptive: `Update deps`, `Fix vat calculation in delivery costs`
 
 Ideally, prefer granular commits.
 
 - Acceptable: `Cart fixes`
-- Better: `Fixed add to cart button`, `Fixed cart count on home`
+- Better: `Fix add to cart button`, `Fix cart count on home`
 
 ## Git Tips
 
