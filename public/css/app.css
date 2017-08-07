@@ -272,6 +272,7 @@ body {
 }
 
 .error {
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     color: white;
@@ -323,6 +324,15 @@ body {
 
 .error__subtext a {
     border-bottom: 1px solid #f4f7f7;
+}
+
+.error__credits {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    color: #f4f7f7;
+    font-size: .6em;
+    opacity: .5;
 }
 
 .home__header {

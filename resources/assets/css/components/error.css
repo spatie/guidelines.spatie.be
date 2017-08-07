@@ -1,4 +1,5 @@
 .error {
+    position: relative;
     width: 100vw;
     min-height: 100vh;
     color: white;
@@ -47,4 +48,13 @@
 
 .error__subtext a {
     border-bottom: 1px solid var(--subtle-blue);
+}
+
+.error__credits {
+    position: absolute;
+    right: var(--half-baseline);
+    bottom: var(--half-baseline);
+    color: var(--subtle-blue);
+    font-size: .6em;
+    opacity: .5;
 }
