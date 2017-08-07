@@ -1,9 +1,5 @@
 # JavaScript Style Guide
 
-A work in progress JavaScript style guide for our projects at [Spatie](https://spatie.be).
-
-Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
-
 ## ESLint
 
 This guide should be used side by side with our base ESLint configuration file, which has it's own repository and is available on npm.
