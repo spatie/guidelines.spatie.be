@@ -1,9 +1,6 @@
 # CSS Style Guide
 
-A work in progress CSS style guide for our projects at [Spatie](https://spatie.be).
 We currently use SCSS, but principles are useable for other pre/postprocessors.
-
-Spatie is a webdesign agency in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 - [HTML](#html)
 - [CSS classes](#css-classes)
