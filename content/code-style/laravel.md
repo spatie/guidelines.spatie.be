@@ -1,10 +1,10 @@
 # Laravel Style Guide
 
-## General Guidelines
+First and foremost, Laravel provides the most value when you write things things like Laravel intended you to. If there's a documented way to achieve something, follow it. Whenever you do something differently, make sure you have a justification for *why* you didn't follow the defaults.
 
-### Casing
+## General PHP Rules
 
-First and foremost, code style must follow PSR-1 and PSR-2. Generally speaking, eveything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
+Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/). Generally speaking, eveything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
 
 ## Configuration
 
@@ -130,7 +130,7 @@ class OpenSourceController
 }
 ```
 
-## Validation rules
+## Validation
 
 All custom validation rules most use snake_case:
 
@@ -140,7 +140,7 @@ Validator::extend('organisation_type', function ($attribute, $value) {
 });
 ```
 
-## Blade
+## Blade Templates
 
 Indent using four space.
 

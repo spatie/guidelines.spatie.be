@@ -1,1 +1,0 @@
-# PHP Style Guide

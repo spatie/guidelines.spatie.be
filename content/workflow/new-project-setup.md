@@ -2,9 +2,9 @@
 
 ## Git
 
-If you're creating a [Blender](https://github.com/spatie/blender) application, first clone Blender, and remove the `.git` folder. This will be the base application for your new project.
+If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone it's main repository and remove the `.git` folder. This will be the base application for your new project.
 
-Create a repository on GitHub using the domain name (if possible).
+Create a repository on GitHub using the project's domain name (if possible).
 
 Example: `spatie/guidelines.spatie.be`
 
@@ -13,10 +13,10 @@ Example: `spatie/guidelines.spatie.be`
 1. Provision a new server on Forge. Use a kebab-cased version of the domain name for the droplet (example: `guidelines-spatie-be`)
 1. Create a new site with root `/current/public`
 1. Ensure that there's a database with a sane name
-1. Run our ansible script on the server
-1. Create two queue workers: `default` & `media_queue`
+1. Run our ansible scripts on the freshly provisioned server
+1. Start one or two queue workers: `default`, and if using Blender `media_queue`
 1. Update the relevant `.env` variables. Don't forget to add the necessary service API keys later.
-1. Enable backups in BackupPC
+1. Enable backups in BackupPC for the project
 1. Update our shared `.ssh/config` file, so we can SSH to servers without specifying a username
 
 ## Services
