@@ -1,0 +1,50 @@
+.error {
+    width: 100vw;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.error--404 {
+    background-image: url('../images/alone.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.error__inner {
+    width: var(--container-width);
+    padding: 0 var(--baseline);
+    margin-top: 30vh;
+}
+
+.error__title {
+    font-weight: bold;
+    line-height: 1;
+    font-size: 70px;
+    margin-bottom: 18px;
+    
+    @media(--collapse) {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+.error__subtext {
+    margin-bottom: 1em;
+    color: var(--subtle-blue);
+}
+
+.error__subtext:last-child {
+    margin-bottom: 0;
+}
+
+.error__subtext--small {
+    opacity: .8;
+    font-size: .7em;
+}
+
+.error__subtext a {
+    border-bottom: 1px solid var(--subtle-blue);
+}
