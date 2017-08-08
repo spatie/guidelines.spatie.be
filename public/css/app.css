@@ -420,11 +420,11 @@ body {
 }
 
 .menu__item {
-    font-size: 17px 
+    font-size: 17px;
 }
 
 .menu__item.-active {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .menu__subtitle {
@@ -438,20 +438,21 @@ body {
 .menu--home {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .menu--home .menu__section {
-    flex-basis: calc(50% - 28px);
+    flex-basis: calc(50% - 28px / 2);
     margin-right: 28px;
     margin-bottom: 28px;
     padding: 22px 28px 28px;
     border: 2px solid #ede8e0;
     border-radius: 2px;
-    background-color: white
+    background-color: white;
 }
 
 .menu--home .menu__section:nth-child(even) {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .menu--home .menu__subtitle {
@@ -462,12 +463,12 @@ body {
 .menu--sidebar .menu__item {
     font-size: .9em;
     color: #e1eff3;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .15)
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .15);
 }
 
 .menu--sidebar .menu__item.-active {
-	color: white;
-	text-shadow: none;
+    color: white;
+    text-shadow: none;
 }
 
 .menu--sidebar .menu__subtitle {
@@ -482,11 +483,11 @@ body {
 }
 
 .menu--sidebar .menu__section {
-    margin-bottom: 56px
+    margin-bottom: 56px;
 }
 
 .menu--sidebar .menu__section:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 @media (max-width: 800px) {
