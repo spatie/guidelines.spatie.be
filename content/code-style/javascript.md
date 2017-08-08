@@ -10,6 +10,12 @@ https://github.com/spatie/eslint-config-spatie
 yarn add --dev eslint-config-spatie
 ```
 
+Most projects have a lint script available in their `package.json`.
+
+```
+eslint resources/assets/js --ext .js,.vue --fix && exit 0
+```
+
 ## Code Style
 
 - [Spacing and Indentation in Functions and Control Statements](#spacing-and-indentation-in-functions-and-control-statements)
@@ -68,7 +74,7 @@ const two = 1 + 1;
 const two = 1+1;
 ```
 
-Braces should always be on the same as it's corresponding statement or declaration (known as *the one true brace style*).
+Opening braces should always be on the same line as their corresponding statement or declaration (known as *the one true brace style*).
 
 ```js
 // Good
@@ -83,7 +89,7 @@ if (true)
 }
 ```
 
-Named functions don't need a space before their parameters. Anonymous ones do.
+Named functions don't have a space before their parameters. Anonymous ones do.
 
 ```js
 // Good
@@ -147,7 +153,7 @@ const people = [ { name: 'Sebastian' }, { name: 'Willem' } ];
 
 ### Line Length
 
-Lines shouldn't be longer than 100 characters, and mustn't be longer than 120 characters (the former isn't enforced by ESLint). Comments mustn't be longer than 80 characters.
+Lines shouldn't be longer than 100 characters, and mustn't be longer than 120 characters (this isn't enforced by ESLint). Comments mustn't be longer than 80 characters.
 
 ### Quotes
 
@@ -176,7 +182,7 @@ function greet(name) {
 }
 ```
 
-Also, when writing html templates (or jsx for that matter), start multiline templates on a new line.
+Also, when writing html templates (or jsx for that matter), start multiline templates on a new line if possible.
 
 ```js
 function createLabel(text) {
@@ -300,7 +306,9 @@ const adder = a => b => sum(a, b);
 
 // Ok, but unnecessarily noisy.
 function adder(a) {
-    return b => sum(a, b);
+    return function (b) {
+        return sum(a, b);
+    };
 }
 ```
 
@@ -318,7 +326,7 @@ $('a').on('click', function () {
 });
 ```
 
-> Try to keep your functions pure and limit the usage of the `this` keyword!
+Try to keep your functions pure and limit the usage of the `this` keyword.
 
 Object methods must use the shorthand method syntax.
 
@@ -337,17 +345,6 @@ export default {
     methods: {
         handleClick: function (event) {
             event.preventDefault();
-        },
-    },
-};
-
-// Bad, it's common for object methods to require context (`this`), so you'd
-// end up with a mix of syntaxes.
-export default {
-    methods: {
-        handleClick: e => e.preventDefault(),
-        save() {
-            this.user.save();
         },
     },
 };
@@ -400,7 +397,7 @@ Destructuring is preferred over assigning variables to the corresponding keys.
 
 ```js
 // Good
-const [ hours, minutes ] = '12:00'.split(':');
+const [hours, minutes] = '12:00'.split(':');
 
 // Bad, unnecessarily verbose, and requires an extra assignment in this case.
 const time = '12:00'.split(':');
