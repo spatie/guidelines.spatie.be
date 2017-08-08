@@ -38,8 +38,9 @@
 
 .sidebar__footer {
     margin-top: var(--double-baseline);
-    font-size: .7em;
+    font-size: .6em;
     color: var(--subtle-blue);
+    opacity: .7;
 }
 
 .sidebar__auth {

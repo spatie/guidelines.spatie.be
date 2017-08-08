@@ -537,8 +537,9 @@ body {
 
 .sidebar__footer {
     margin-top: 56px;
-    font-size: .7em;
+    font-size: .6em;
     color: #f4f7f7;
+    opacity: .7;
 }
 
 .sidebar__auth {
