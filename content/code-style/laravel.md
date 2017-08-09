@@ -177,3 +177,17 @@ Gate::define('editPost', function ($user, $post) {
 ```
 
 Try to name abilities using default CRUD words. One exception: replace `show` with `view`. A server shows a resource, a user views it.
+
+## Commenting
+
+Comments should be avoided by writing expressive code. If you do need to use a comment format it like this
+
+```php
+// there should be space before a single line comment
+
+/**
+ * If you need to explain a lot you can use a comment block. Notice the
+ * double * on the first line. Comment blocks don't need to be three
+ * lines long, or three characters shorter than the previous line
+ */
+```
