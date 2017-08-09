@@ -178,9 +178,9 @@ Gate::define('editPost', function ($user, $post) {
 
 Try to name abilities using default CRUD words. One exception: replace `show` with `view`. A server shows a resource, a user views it.
 
-## Commenting
+## Comments
 
-Comments should be avoided by writing expressive code. If you do need to use a comment format it like this
+Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this
 
 ```php
 // there should be space before a single line comment
