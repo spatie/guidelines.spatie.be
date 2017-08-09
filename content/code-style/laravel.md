@@ -183,7 +183,7 @@ Try to name abilities using default CRUD words. One exception: replace `show` wi
 Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this:
 
 ```php
-// there should be space before a single line comment
+// There should be space before a single line comment.
 
 /**
  * If you need to explain a lot you can use a comment block. Notice the
