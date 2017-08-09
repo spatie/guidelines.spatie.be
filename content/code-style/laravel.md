@@ -188,6 +188,6 @@ Comments should be avoided as much as possible by writing expressive code. If yo
 /**
  * If you need to explain a lot you can use a comment block. Notice the
  * double * on the first line. Comment blocks don't need to be three
- * lines long, or three characters shorter than the previous line
+ * lines long or three characters shorter than the previous line.
  */
 ```
