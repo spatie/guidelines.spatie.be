@@ -47,6 +47,11 @@
     line-height: calc(var(--baseline) * 1.2); 
 }
 
+.home__introduction a {
+    border-bottom: 2px solid var(--blue-border-color);
+    color: var(--link-color);
+}
+
 .home__index {
     background-color: var(--broken-white);
     border-top: 1px solid var(--broken-gray);

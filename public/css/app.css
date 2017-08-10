@@ -384,6 +384,11 @@ body {
     line-height: 33.6px; 
 }
 
+.home__introduction a {
+    border-bottom: 2px solid #e8f6fa;
+    color: #22a4c9;
+}
+
 .home__index {
     background-color: #fffcf8;
     border-top: 1px solid #ede8e0;

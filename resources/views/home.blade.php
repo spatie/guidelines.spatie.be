@@ -14,13 +14,13 @@
         </header>
         <section class="home__introduction">
             <p class="-large">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio ultricies, accumsan ipsum non, consequat magna. In ut rutrum lectus.
+                This site contains a set of guidelines we use to bring our projects to a good end. We decided to document our workflow because consistency is one of the most valuable traits of maintainable software.
             </p>
             <p>
-                Praesent luctus justo eros, ut ultricies mauris iaculis ac. Vestibulum molestie odio sit amet euismod fermentum. Vivamus vel maximus risus, vel efficitur ligula. In rhoncus nulla velit, eget accumsan mi rutrum eu. Etiam at leo vitae nisl vehicula pharetra. 
+                The contents of this site exist for ourselves—more importantly, our future selves—and for giving future collegues a reference to our way of doing things and their quirks. The guidelines cover workflow, code style, and other little things we consider worth documenting.
             </p>
             <p>
-                Vestibulum ultrices velit ut odio cursus, at imperdiet orci rutrum. Nunc eu lacus id nisl mollis sollicitudin. Praesent felis leo, ornare non est et, tincidunt dapibus augue. Sed metus metus, laoreet non porta eget, semper vitae odio.
+                All pages are hosted on <a href="https://github.com/spatie/guidelines.spatie.be" target="spatie">GitHub</a>, so edits and improvements are welcome. Note that these are our own opinionated ideas, so we'll be finicky when it comes to substantial changes.
             </p>
         </section>
         <nav class="home__index">
