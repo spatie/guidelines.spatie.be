@@ -39,6 +39,9 @@
 .sidebar__footer {
     margin-top: var(--double-baseline);
     font-size: .6em;
+}
+
+.sidebar__footer a {
     color: var(--subtle-blue);
     opacity: .7;
 }
