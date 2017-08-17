@@ -23,13 +23,13 @@ If the repo concerns something else, for example a package, it's name should be 
 
 If you're going to remember on thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
 
-### Projects in Initial development
+### Projects in initial development
 
 Projects that aren't live yet have at least two branches: `master` and `develop`. Avoid committing directly on the master branch, always commit through develop.
 
 Feature branches are optional, if you'd like to create a feature branch, make sure it's branched from `develop`, not `master`.
 
-### Live Projects
+### Live projects
 
 Once a project goes live, the `develop` branch gets deleted. All future commits to `master` must be added through a feature branch. In most cases, it's preferred to squash your commits on merge.
 
@@ -38,7 +38,7 @@ There's no strict ruling on feature branch names, just make sure it's clear enou
 - Bad: `feature/mailchimp`, `random-things`, `develop`
 - Good: `feature-mailchimp`, `fix-deliverycosts` of `updates-june-2016`
 
-### Pull Requests
+### Pull requests
 
 Merging branches via GitHub pull requests isn't a requirement, but can be useful if:
 
@@ -46,7 +46,7 @@ Merging branches via GitHub pull requests isn't a requirement, but can be useful
 - You want to ensure your branch can be merged and commits can be squashed via an interface
 - Future you wants a quick way to retrieve that point in history by browsing passed pull requests
 
-### Merging and Rebasing
+### Merging and rebasing
 
 Ideally, rebase your branch regularly to reduce the chance of merge conflicts.
 
@@ -67,11 +67,11 @@ Ideally, prefer granular commits.
 
 ## Git Tips
 
-### Creating Granular Commits With `patch`
+### Creating granular commits with `patch`
 
 If you've made multiple changes but want to split them into more granular commits, use `git add -p`. This will open an interactive session in which you can choose which chunks you want to stage for your commit.
 
-### Moving Commits to a New Branch
+### Moving commits to a new branch
 
 First, create your new branch, then revert the current branch, and finally checkout the new branch.
 
