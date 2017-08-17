@@ -2,11 +2,23 @@
 
 All our projects use Git, mostly with a repository hosted on GitHub. Since we're a small team, and most projects have less than 3 people working on it simultaneously, we have pretty loose Git guidelines since we rarely bump into conflicts.
 
+## Naming conventions
+
+If the repo contains the source code of the a site it's name should be the main naked domain name of that site. It should be lowercased.
+
+- Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
+- Good: `spatie.be`
+
+If the repo concerns something else, for example a package, it's name should be kebeb-cased.
+
+- Bad: `LaravelBackup`, `Spoon`
+- Good: `laravel-backup`, `spoon`
+
 ## Branches
 
 If you're going to remember on thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
 
-### Projects in Initial Development
+### Projects in Initial development
 
 Projects that aren't live yet have at least two branches: `master` and `develop`. Avoid committing directly on the master branch, always commit through develop.
 
