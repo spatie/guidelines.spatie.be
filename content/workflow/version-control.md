@@ -9,6 +9,11 @@ If the repo contains the source code of the a site it's name should be the main 
 - Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
 - Good: `spatie.be`
 
+Sites that are hosted on a subdomain may use that subdomain in their name
+
+- Bad: `spatie.be-guidelines`
+- Good: `guidelines.spatie.be`
+
 If the repo concerns something else, for example a package, it's name should be kebab-cased.
 
 - Bad: `LaravelBackup`, `Spoon`
