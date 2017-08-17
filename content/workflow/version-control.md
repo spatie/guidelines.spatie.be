@@ -9,7 +9,7 @@ If the repo contains the source code of the a site it's name should be the main 
 - Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
 - Good: `spatie.be`
 
-If the repo concerns something else, for example a package, it's name should be kebeb-cased.
+If the repo concerns something else, for example a package, it's name should be kebab-cased.
 
 - Bad: `LaravelBackup`, `Spoon`
 - Good: `laravel-backup`, `spoon`
