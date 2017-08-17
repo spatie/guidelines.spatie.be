@@ -4,7 +4,7 @@
 
 If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone it's main repository and remove the `.git` folder. This will be the base application for your new project.
 
-Create a repository on GitHub using the project's domain name (if possible).
+Create a repository on the Spatie organization on GitHub using the [repo naming rules](https://guidelines.spatie.be/workflow/version-control#repo-naming-conventions).
 
 Example: `spatie/guidelines.spatie.be`
 
