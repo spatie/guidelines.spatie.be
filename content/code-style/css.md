@@ -293,7 +293,7 @@ stylelint resources/assets/css/**/**.css --fix -r
 
 ## File structure
 
-We typically use 5 folders and a main `app.scss` file:
+We typically use 5 folders and a main `app.css` file:
 
 ```
 |-- base       : basic html elements
@@ -368,7 +368,7 @@ Settings for colors, breakpoints, typography. etc.
 
 ### Vendor folder
 
-Imported and customized SCSS from 3rd party components (this is the syntactical Wild West).
+Imported and customized CSS from 3rd party components (this is the syntactical Wild West).
 
 ```
 |-- fancybox.css
