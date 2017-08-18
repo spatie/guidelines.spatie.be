@@ -84,11 +84,10 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 }
 ```
 
-- A modifier changes one basic properties of a component, or adds a property
+- A modifier changes only simple properties of a component, or adds a property
 - Modifiers are **always tied** to a component, don't work on their own (make sure you never write "global" modifier selectors)
-- Modifiers should be generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
 - Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below)
-- Since modifiers have a single responsibility, the order in html or css shouldn't matter
+- Since modifiers have a single responsability, the order in HTML or CSS shouldn't matter
 
 ### .component--variation
 
@@ -108,15 +107,12 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 }
 ```
 
-- A variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers
+- A variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers often used together
 - It's used stand-alone without the need to use the base class `button`
 - It's a logical case to use `@apply` here, so the variation can inherit the original modifiers (**under consideration**)
+- Even variations should be generic and reusable if possible: `class="team--large"` is better than `class="team--management"`
 
 ### .helper-property
-
-```html
-<div class="helper-right">
-```
 
 ```html
 <div class="align-right">
@@ -125,9 +121,9 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 <div class="margin-top-s">
 ```
 
-- Reusable properties throughout the entire project
+- Reusable utility classes throughout the entire project
 - Prefixed by type (= the property that will be effected)
-- Each helper class is responsible for a well-defined set of properties
+- Each helper class is responsible for a well-defined set of properties. It should be clear that these are not components
 
 ### .js-hook
 
@@ -151,12 +147,12 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 
 ```html
 <!-- Try to avoid, news padding or margin could break the grid--> 
-<div class="grid__col -half news">
+<div class="grid__col -1/2 news">
     …
 </div>    
 
 <!-- More flexible, readable & moveable -->
-<div class="grid__col -half">
+<div class="grid__col -1/2">
     <article class="news">
         …
     </article>
