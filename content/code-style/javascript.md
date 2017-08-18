@@ -1,5 +1,17 @@
 # JavaScript Style Guide
 
+- [Spacing and Indentation in Functions and Control Statements](#spacing-and-indentation-in-functions-and-control-statements)
+- [Spacing and Indentation in Objects and Arrays](#spacing-and-indentation-in-objects-and-arrays)
+- [Line Length](#line-length)
+- [Quotes](#quotes)
+- [Semicolons](#semicolons)
+- [Variable Assignment](#variable-assignment)
+- [Variable Names](#variable-names)
+- [Comparisons](#comperisons)
+- [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
+- [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
+- [Object and Array Destructuring](#object-and-array-destructuring)
+
 ## ESLint
 
 This guide should be used side by side with our base ESLint configuration file, which has it's own repository and is available on npm.
@@ -17,18 +29,6 @@ eslint resources/assets/js --ext .js,.vue --fix && exit 0
 ```
 
 ## Code Style
-
-- [Spacing and Indentation in Functions and Control Statements](#spacing-and-indentation-in-functions-and-control-statements)
-- [Spacing and Indentation in Objects and Arrays](#spacing-and-indentation-in-objects-and-arrays)
-- [Line Length](#line-length)
-- [Quotes](#quotes)
-- [Semicolons](#semicolons)
-- [Variable Assignment](#variable-assignment)
-- [Variable Names](#variable-names)
-- [Comparisons](#comperisons)
-- [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
-- [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
-- [Object and Array Destructuring](#object-and-array-destructuring)
 
 ### Spacing and Indentation in Functions and Control Statements
 

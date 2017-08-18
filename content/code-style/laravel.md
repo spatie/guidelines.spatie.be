@@ -1,5 +1,18 @@
 # Laravel Style Guide
 
+- [About Laravel](#about-laravel)
+- [General PHP Rules](#general-php-rules)
+- [Configuration](#configuration)
+- [Routing](#routing)
+- [Controllers](#controllers)
+- [Views](#views)
+- [Validation](#validation)
+- [Blade Templates](#blade-templates)
+- [Authorization](#authorization)
+- [Comments](#comments)
+
+## About Laravel
+
 First and foremost, Laravel provides the most value when you write things things like Laravel intended you to. If there's a documented way to achieve something, follow it. Whenever you do something differently, make sure you have a justification for *why* you didn't follow the defaults.
 
 ## General PHP Rules

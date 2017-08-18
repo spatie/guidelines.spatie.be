@@ -1,17 +1,19 @@
 # CSS Style Guide
 
-We use PostCSS, but principles are useable for other pre/postprocessors.
-
+- [Preprocessing](#preprosessing)
 - [BEVM](#bevm)
 - [DOM structure](#dom-structure)
 - [Code style](#code-style)
 - [File structure](#file-structure)
 - [Inspiration](#inspiration)
 
+## Preprocessing
+
+We use PostCSS with [CSSNext](http://cssnext.io), but these principles are applicable to any pre- or postprocessors out there.
+
 ## BEVM
 
-We use BEM syntax with custom accents.
-The 'variation' is a concept picked up from [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/). 
+We use a BEM-like syntax with some custom accents. The 'variation' is a concept picked up from [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/). 
 
 We only use classes for styling, with the following ingredients:
 
@@ -32,40 +34,43 @@ We only use classes for styling, with the following ingredients:
 .helper-property             /* Generic helper grouped by type (eg. `align-right`, `margin-top-s`) */
 
 .js-hook                     /* Script hook, not used for styling */
-
 ```
 
 ### .blocks and .block__elements
 
-`class="news"`
+```html
+<div class="news">
+```
 
 - A single reusable component or pattern
 - Children are separated with `__`
 - All lowercase, can contain `-` in name
 
 ```html
-class="news"
-class="news__item"
-class="news__item__publish-date"
+<div class="news">
+    <div class="news__item">
+        <div class="news__item__publish-date">
 ```     
 
-- Use descriptive language. Consider `class="team__member"` instead of `class="team__item"`:
+Be descriptive with block elements. Consider `class="team__member"` instead of `class="team__item"`
 
 ```html
-class="team"
-class="team__member"
+<div class="team">
+    <div class="team__member">
 ```   
 
-- You can use plurals & singulars for readability. Consider `class="person"` instead of `class="persons_person"`:
+You can use plurals & singulars for readability. Consider `class="person"` instead of `class="people_person"`
 
 ```html
-class="persons"
-class="person"
+<div class="people">
+    <div class="person">
 ```   
 
 ### .-modifier
 
-`class="button -rounded -active"`
+```html
+<div class="button -rounded -active">
+```
 
 ```css
 .button {
@@ -80,14 +85,16 @@ class="person"
 ```
 
 - A modifier changes one basic properties of a block, or adds a property
-- Modifiers are **always tied** to a component or block, don't work on their own
-- Make it generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
-- Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below).
-- The order in html or css should therefore not matter
+- Modifiers are **always tied** to a component or block, don't work on their own (make sure you never write "global" modifier selectors)
+- Modifiers should be generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
+- Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below)
+- Since modifiers have a single responsibility, the order in html or css shouldn't matter
 
 ### .block--variation
 
-`class="button--delete"`
+```html
+<div class="button--delete">
+```
 
 ```css
 .button--delete {
@@ -103,17 +110,19 @@ class="person"
 
 - A variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers
 - It's used stand-alone without the need to use the base class `button`
-- It's a logical case to use `@apply` here, so the variation can inherit the original modifiers (**under consideration**).
+- It's a logical case to use `@apply` here, so the variation can inherit the original modifiers (**under consideration**)
 
 ### .helper-property
 
-`class="helper-right"`
+```html
+<div class="helper-right">
+```
 
 ```html
-class="align-right"
-class="visibility-hidden"
-class="text-ellipsis"
-class="margin-top-s"
+<div class="align-right">
+<div class="visibility-hidden">
+<div class="text-ellipsis">
+<div class="margin-top-s">
 ```
 
 - Reusable properties throughout the entire project
@@ -123,7 +132,7 @@ class="margin-top-s"
 ### .js-hook
 
 ```html
-<div class="js-map ..."
+<div class="js-map …"
      data-map-icon="url.png"
      data-map-lat="4.56"
      data-map-lon="1.23">
@@ -133,28 +142,23 @@ class="margin-top-s"
 - Use `data-attributes` only for data storage or configuration storage
 - Has no effect on styling whatsoever
 
-
-
- 
-
 ## DOM structure 
 
-- All styling is done by classes (except for HTML that is out of control)
+- All styling is done by classes (except for HTML that is out of our control)
 - Avoid #id's for styling
 - Make elements easily reusable, moveable in a project, or between projects
 - Avoid multiple components on 1 DOM-element, break them up
 
-
 ```html
 <!-- Try to avoid, news padding or margin could break the grid--> 
 <div class="grid__col -half news">
-    ...
+    …
 </div>    
 
 <!-- More flexible, readable & moveable -->
 <div class="grid__col -half">
     <article class="news">
-    …
+        …
     </article>
 </div>   
 ```
@@ -179,11 +183,11 @@ Html tags that are out of control (eg. the output of an editor) are scoped by th
 ```css
 .article {
     /* Tag instead of class here */
-    h2 {
+    & h2 {
         …
     }
 
-    p {
+    & p {
         …
     }    
 }
@@ -195,12 +199,11 @@ Html tags that are out of control (eg. the output of an editor) are scoped by th
 <div class="js-hook block__element -modifier helper">
 ```
 
-Visual class grouping can be done with `... | ...`:
+Visual class grouping can be done with `… | …`:
 
 ```html
 <div class="js-masonry | news__item -blue -small -active | padding-top-s align-right">
 ```
-
 
 ## Code style
 
@@ -235,10 +238,9 @@ Most projects have a lint script (with the `--fix` flag) available in their `pac
 stylelint resources/assets/css/**/**.css --fix -r
 ```
 
-### Example
+### Examples
  
 ```css
-
 /* Comment */
 
 .block {                          /* Indent 4 spaces, space before bracket */                                   
@@ -290,7 +292,6 @@ stylelint resources/assets/css/**/**.css --fix -r
 
 ```
 
-
 ## File structure
 
 We typically use 5 folders and a main `app.css` file:
@@ -302,7 +303,6 @@ We typically use 5 folders and a main `app.css` file:
 |-- settings   : variables
 |-- vendor     : custom files from 3rd party components like fancybox, select2 etc.
 `-- app.css    : main file
-
 ```
 
 
@@ -331,7 +331,7 @@ Contains resets and sensible defaults for basic html elements. Example files and
 |-- p.css
 |-- hx.css (h1, h2, h3)
 |-- list.css (ul, ol, dl)
-`--…
+`-- …
 ```
 
 ### Components folder
@@ -341,7 +341,7 @@ Stand-alone reusable components with their modifiers and variations.
 ```
 |-- alert.css
 |-- avatar.css
-`--…
+`-- …
 ```
 
 ### Helpers folder
@@ -352,7 +352,7 @@ Stand-alone helper classes for small layout issues.
 |-- align.css
 |-- margin.css
 |-- padding.css
-`--…
+`-- …
 ```
 
 ### Settings folder
@@ -363,7 +363,7 @@ Settings for colors, breakpoints, typography. etc.
 |-- breakpoint.css
 |-- color.css
 |-- grid.css
-`--…
+`-- …
 ```
 
 ### Vendor folder
