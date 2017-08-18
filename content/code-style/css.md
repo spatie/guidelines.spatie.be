@@ -2,7 +2,7 @@
 
 We use PostCSS, but principles are useable for other pre/postprocessors.
 
-- [BEVM classes](#bevm)
+- [BEVM](#bevm)
 - [DOM structure](#dom-structure)
 - [Code style](#code-style)
 - [File structure](#file-structure)
