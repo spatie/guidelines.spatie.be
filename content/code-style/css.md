@@ -18,25 +18,24 @@ We use a BEM-like syntax with some custom accents. The 'variation' is a concept 
 We only use classes for styling, with the following ingredients:
 
 ```css
-.block                       /* Parent block */   
-.block__element              /* Child block */
-.block__element__element     /* Grandchild */
+.component                      /* Component */   
+.component__element             /* Child */
+.component__element__element    /* Grandchild */
 
-                             /* Shorthand if possible */
-.items                       /* Parent block */
-.item                        /* Child block */
+.items                          /* Use plurals if possible */
+.item                        
 
-.-modifier                   /* Single property modifier, can be chained */
+.-modifier                      /* Single property modifier, can be chained */
 
-.block--variation            /* Standalone variation of a block */
-.block__element--variation   /* Standalone variation of an element */
+.component--variation           /* Standalone variation of a component */
+.component__element--variation  /* Standalone variation of an element */
 
-.helper-property             /* Generic helper grouped by type (eg. `align-right`, `margin-top-s`) */
+.helper-property                /* Generic helper grouped by type (eg. `align-right`, `margin-top-s`) */
 
-.js-hook                     /* Script hook, not used for styling */
+.js-hook                        /* Script hook, not used for styling */
 ```
 
-### .blocks and .block__elements
+### .component and .component__element
 
 ```html
 <div class="news">
@@ -45,6 +44,7 @@ We only use classes for styling, with the following ingredients:
 - A single reusable component or pattern
 - Children are separated with `__`
 - All lowercase, can contain `-` in name
+- Avoid more than 3 levels deep
 
 ```html
 <div class="news">
@@ -52,18 +52,18 @@ We only use classes for styling, with the following ingredients:
         <div class="news__item__publish-date">
 ```     
 
-Be descriptive with block elements. Consider `class="team__member"` instead of `class="team__item"`
+Be descriptive with component elements. Consider `class="team__member"` instead of `class="team__item"`
 
 ```html
 <div class="team">
     <div class="team__member">
 ```   
 
-You can use plurals & singulars for readability. Consider `class="person"` instead of `class="people_person"`
+You can use plurals & singulars for readability. Consider `class="member"` instead of `class="members__member"`
 
 ```html
-<div class="people">
-    <div class="person">
+<div class="members">
+    <div class="member">
 ```   
 
 ### .-modifier
@@ -84,13 +84,13 @@ You can use plurals & singulars for readability. Consider `class="person"` inste
 }
 ```
 
-- A modifier changes one basic properties of a block, or adds a property
-- Modifiers are **always tied** to a component or block, don't work on their own (make sure you never write "global" modifier selectors)
+- A modifier changes one basic properties of a component, or adds a property
+- Modifiers are **always tied** to a component, don't work on their own (make sure you never write "global" modifier selectors)
 - Modifiers should be generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
 - Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below)
 - Since modifiers have a single responsibility, the order in html or css shouldn't matter
 
-### .block--variation
+### .component--variation
 
 ```html
 <div class="button--delete">
@@ -163,7 +163,7 @@ You can use plurals & singulars for readability. Consider `class="person"` inste
 </div>   
 ```
 
-Block tags are interchangeable since styling is done by class.
+Tags are interchangeable since styling is done by class.
 
 ```html
 <!-- All the same -->
@@ -172,7 +172,7 @@ Block tags are interchangeable since styling is done by class.
 <article class="article">
 ```
 
-Html tags that are out of control (eg. the output of an editor) are scoped by the parent.
+Html tags that are out of control (eg. the output of an editor) are scoped by the component.
 
 ```html
 <div class="article">
@@ -196,7 +196,7 @@ Html tags that are out of control (eg. the output of an editor) are scoped by th
 ### Class order
 
 ```html
-<div class="js-hook block__element -modifier helper">
+<div class="js-hook component__element -modifier helper">
 ```
 
 Visual class grouping can be done with `… | …`:
@@ -243,7 +243,7 @@ stylelint resources/assets/css/**/**.css --fix -r
 ```css
 /* Comment */
 
-.block {                          /* Indent 4 spaces, space before bracket */                                   
+.component {                      /* Indent 4 spaces, space before bracket */                                   
     @at-rule …;                   /*  @at-rules first */
          
     a-property: value;            /* Props sorted automatically by eg. PostCSS-sorting */
@@ -275,18 +275,18 @@ stylelint resources/assets/css/**/**.css --fix -r
         …
     }
                 
-    h1 {                          /* Avoid unless you have no control over the HTML inside the `.block` */
+    h1 {                          /* Avoid unless you have no control over the HTML inside the `.component` */
         …
     }
           
 }
-                                  /* Line between blocks */
-.block--variation {               /* A block with few extra modifications often used together */
-    @apply .block;                /* Only good use for @apply */
+                                  /* Line between classes */
+.component--variation {           /* A component with few extra modifications often used together */
+    @apply .component;            /* Only good use for @apply */
     …
 }
     
-.block__element {                 /* Separate class for readability, searchability instead of `&__element`*/
+.component__element {             /* Separate class for readability, searchability instead of `&__element`*/
     …
 }
 
@@ -310,7 +310,7 @@ We typically use 5 folders and a main `app.css` file:
 
 - We use `postcss-easy-import` for glob imports
 - Source order shouldn't matter, except for order of folders: import npm libraries, settings or utilities first
-- Import is done by glob pattern so files can be moved easily from eg. components to patterns
+- Import is done by glob pattern so files can be added easily
  
 ```css
 @import 'settings/**/*';
@@ -322,14 +322,14 @@ We typically use 5 folders and a main `app.css` file:
 
 ### Base folder
 
-Contains resets and sensible defaults for basic html elements. Example files and classes:
+Contains resets and sensible defaults for basic html elements. 
 
 ```
 |-- universal.css
 |-- html.css
 |-- a.css
 |-- p.css
-|-- hx.css (h1, h2, h3)
+|-- heading.css (h1, h2, h3)
 |-- list.css (ul, ol, dl)
 `-- …
 ```
@@ -357,7 +357,7 @@ Stand-alone helper classes for small layout issues.
 
 ### Settings folder
 
-Settings for colors, breakpoints, typography. etc.
+Settings for colors, breakpoints, typography, etc. You can start small with one `settings.css` and split them up in different files if your variables grow.
 
 ```
 |-- breakpoint.css
@@ -368,10 +368,10 @@ Settings for colors, breakpoints, typography. etc.
 
 ### Vendor folder
 
-Imported and customized CSS from 3rd party components (this is the syntactical Wild West).
+Imported and customized CSS from 3rd party components (this is the syntactical Wild West, you probably don't want to lint this).
 
 ```
-|-- fancybox.css
+|-- pikaday.css
 |-- select2.css
 `-- …
 ```
