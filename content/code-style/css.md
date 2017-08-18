@@ -1,110 +1,45 @@
 # CSS Style Guide
 
-We currently use SCSS, but principles are useable for other pre/postprocessors.
+We use PostCSS, but principles are useable for other pre/postprocessors.
 
-- [HTML](#html)
-- [CSS classes](#css-classes)
-- [SCSS syntax](#scss-syntax)
+- [BEVM classes](#bevm)
+- [DOM structure](#dom-structure)
+- [Code style](#code-style)
 - [File structure](#file-structure)
-- [Tools](#tools)
 - [Inspiration](#inspiration)
 
-## HTML 
+## BEVM
 
-- All styling is done by classes
-- Make elements easily reusable, moveable in a project, or between projects
-- Avoid #id's for styling
-- Avoid multiple components on 1 DOM-element
+We use BEM syntax with custom accents.
+The 'variation' is a concept picked up from [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/). 
 
-```html
-<!-- Try to avoid --> 
-<div class="grid__col -half news">
-    ...
-</div>    
+We only use classes for styling, with the following ingredients:
 
-<!-- More flexible, readable & moveable -->
-<div class="grid__col -half">
-    <article class="news">
-    ... 
-    </article>
-</div>   
-```
+```css
+.block                       /* Parent block */   
+.block__element              /* Child block */
+.block__element__element     /* Grandchild */
 
-Block tags are interchangeable since styling is done by class:
-```html
-<!-- All the same -->
-<div class="article">
-<section class="article">
-<article class="article">
-```
+                             /* Shorthand if possible */
+.items                       /* Parent block */
+.item                        /* Child block */
 
-Html tags that are out of control (eg. the output of an editor) are scoped by the parent:
-```html
-<div class="article has-html">
-    <!-- custom html output -->
-</div>    
-```
+.-modifier                   /* Single property modifier, can be chained */
 
+.block--variation            /* Standalone variation of a block */
+.block__element--variation   /* Standalone variation of an element */
 
+.helper-property             /* Generic helper grouped by type (eg. `align-right`, `margin-top-s`) */
 
-## CSS classes
-
-We follow a BEVM syntax with custom accents.
-
-```scss
-.js-hook                     // Script hook, not used for styling
-
-.block                       // Parent block   
-.block__element              // Child block
-.block__element__element     // Grandchild 
-
-                             // Shorthand if possible
-.items                       // Parent block
-.item                        // Child block
-
-.block--variation            // Standalone variation of a block
-.block__element--variation   // Standalone variation of an element
-.v-block                     // Block only used in specific view
-
-.-modifier                   // Single property modifier
-
-.h-type-value                // Generic helper grouped by type (eg. `h-align`, `h-margin`)
-.is-state                    // State change by server or client
-.has-something               // Parent class nests styling for children (eg. text editor output)
+.js-hook                     /* Script hook, not used for styling */
 
 ```
-
-Class order in the DOM:
-
-```html
-<div class="js-hook block__element -modifier h-helper is-state has-something">
-```
-
-Visual class grouping can be done with `... | ...`:
-
-```html
-<div class="js-masonry | news__item -blue -small | h-hidden is-active has-html">
-```
-
-### .js-hook
-
-```html
-<div class="js-map ..."
-     data-map-icon="url.png"
-     data-map-lat="4.56"
-     data-map-lon="1.23">
-```
-
-- Use `js-hook` to initiate handlers like `document.getElementsByClassName('js-hook')`
-- Use `data-attributes` only for data storage or configuration storage
-- Has no effect on styling whatsoever
 
 ### .blocks and .block__elements
 
 `class="news"`
 
-- Defined in `components/*.scss`, `patterns/*.scss` or `views/*.scss`
-- A single reusable component, patterns or view specific block 
+- A single reusable component or pattern
 - Children are separated with `__`
 - All lowercase, can contain `-` in name
 
@@ -128,330 +63,296 @@ class="persons"
 class="person"
 ```   
 
+### .-modifier
+
+`class="button -rounded -active"`
+
+```css
+.button {
+    &.-rounded {
+        …  
+    }
+
+    &.-active {
+        …
+    }
+}
+```
+
+- A modifier changes one basic properties of a block, or adds a property
+- Modifiers are **always tied** to a component or block, don't work on their own
+- Make it generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
+- Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below).
+- The order in html or css should therefore not matter
+
 ### .block--variation
 
 `class="button--delete"`
 
-```scss
+```css
 .button--delete {
-    @extend .button;
+    /* Base button classes */
+    …
     
+    /* Variations */
     background-color: red; 
     color: white;
     text-transform: uppercase;
 }
 ```
 
-- Defined in `components/*.scss` or `patterns/*.scss`
-- A variation adds a few properties to a block, and acts as a shorthand for multiple modifiers
+- A variation adds more than one properties at once to a class, and acts as a shorthand for multiple modifiers
 - It's used stand-alone without the need to use the base class `button`
-- It's a logical case to use `@extend` here, so the variation can inherit the original modifiers
+- It's a logical case to use `@apply` here, so the variation can inherit the original modifiers (**under consideration**).
 
+### .helper-property
 
-### .v-block
-
-```html
-class="v-auth"
-class="v-auth__form"
-```
-
-- Defined in `views/*.scss`
-- A special component that is not reusable, but tied to a specific view
-- Mostly exceptions and one-time styling
-- Use sparsely, try to think in more generic components
-
-
-
-### .-modifier
-
-`class="button -rounded"`
-
-```scss
-.button {
-    &.-rounded {
-      ...
-    }
-```
-
-- Defined in `components/*.scss` or `patterns/*.scss`
-- A modifier changes one basic properties of a block, or adds a property
-- Modifiers are **always tied** to a component or block, don't work on their own
-- Make it generic and reusable if possible: `class="team -large"` is better than `class="team -management"`
-- Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`
-- The order in html or css should therefore not matter
-
-
-### .h-type-value
-
-`class="h-align-right"`
+`class="helper-right"`
 
 ```html
-class="h-align-right"
-class="h-visibility-hidden"
-class="h-text-ellipsis"
+class="align-right"
+class="visibility-hidden"
+class="text-ellipsis"
+class="margin-top-s"
 ```
 
-- Eg. defined in `helpers/*.scss`
 - Reusable properties throughout the entire project
 - Prefixed by type (= the property that will be effected)
 - Each helper class is responsible for a well-defined set of properties
 
+### .js-hook
 
-### .is-state
+```html
+<div class="js-map ..."
+     data-map-icon="url.png"
+     data-map-lat="4.56"
+     data-map-lon="1.23">
+```
 
-`class="is-loaded"`
+- Use `js-hook` to initiate handlers like `document.getElementsByClassName('js-hook')`
+- Use `data-attributes` only for data storage or configuration storage
+- Has no effect on styling whatsoever
 
-```scss
-&.is-loaded {
+
+
+ 
+
+## DOM structure 
+
+- All styling is done by classes (except for HTML that is out of control)
+- Avoid #id's for styling
+- Make elements easily reusable, moveable in a project, or between projects
+- Avoid multiple components on 1 DOM-element, break them up
+
+
+```html
+<!-- Try to avoid, news padding or margin could break the grid--> 
+<div class="grid__col -half news">
     ...
+</div>    
+
+<!-- More flexible, readable & moveable -->
+<div class="grid__col -half">
+    <article class="news">
+    …
+    </article>
+</div>   
+```
+
+Block tags are interchangeable since styling is done by class.
+
+```html
+<!-- All the same -->
+<div class="article">
+<section class="article">
+<article class="article">
+```
+
+Html tags that are out of control (eg. the output of an editor) are scoped by the parent.
+
+```html
+<div class="article">
+    <!-- custom html output -->
+</div>    
+```
+
+```css
+.article {
+    /* Tag instead of class here */
+    h2 {
+        …
+    }
+
+    p {
+        …
+    }    
 }
 ```
 
-- Special kind of modifier
-- Classes added by server or client
-- For state indication, interaction, animation start/stop 
+### Class order
+
+```html
+<div class="js-hook block__element -modifier helper">
+```
+
+Visual class grouping can be done with `... | ...`:
+
+```html
+<div class="js-masonry | news__item -blue -small -active | padding-top-s align-right">
+```
 
 
-### .has-something
+## Code style
 
-`class="article has-html"`
+We use [stylelint](https://github.com/stylelint/stylelint) to lint our stylesheets. 
+Configuration is done a custom `.stylelintrc` which extends `stylelint-config-standard`.
 
-```scss
-&.has-html {
-    h1 {
-      ...
+```
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "resources/assets/css/vendor/*",
+  "rules": {
+      "indentation": [4],
+      "at-rule-empty-line-before": null,
+      "number-leading-zero": null,
+      "selector-pseudo-element-colon-notation": "single",
     }
 }
 ```
 
-- Explicit scoping class indicates special status of this DOM node's tree
-- An exception to the rule "all is class" when content of the node is rendered by a external component
-- Styling is done by nesting in the namespace
+### Installation
 
+```
+yarn add stylelint
+yarn add stylelint-config-standard
+```
 
+### Usage
 
+Most projects have a lint script (with the `--fix` flag) available in their `package.json`.
 
-## Scss syntax 
+```
+stylelint resources/assets/css/**/**.css --fix -r
+```
+
+### Example
  
-```scss
+```css
 
 /* Comment */
 
-.block {                             // Indent 4 spaces, space before bracket                                   
-    
-    @include ...;                   //  @includes first
+.block {                          /* Indent 4 spaces, space before bracket */                                   
+    @at-rule …;                   /*  @at-rules first */
          
-    a-property: value;              // Props sorted automatically by csscomb
+    a-property: value;            /* Props sorted automatically by eg. PostCSS-sorting */
     b-property: value; 
-    c-property: .45em;              // No leading zero's
+    c-property: .45em;            /* No leading zero's */
     
-    &:hover {                       // Pseudo class
-      ...
+    &:hover {                     /* Pseudo class */
+        …
     }
     
-    &:before,                       // Pseudo-elements
-    &:after {                       // Each on a line
-      ...
+    &:before,                     /* Pseudo-elements */
+    &:after {                     /* Each on a line */
+        …
     }
     
     &.-modifier {
-      ...                           // Limit props or create variation
+        …                           
     }
      
     &.-modifier2 {
-      ...                        
+        …                        
     }
-    
     
     /* Try to avoid */
     
-    @extend ...;                   // Use only for variations. See eg. https://www.sitepoint.com/avoid-sass-extend/
+    @apply …;                     /* Use only for variations */
     
-    &_subclass {                   // Unreadable and not searchable
-    
+    &_subclass {                  /* Unreadable and not searchable */
+        …
     }
                 
-    h1 {                           // Avoid unless you cannot add a class to the H1 element
-      ...
+    h1 {                          /* Avoid unless you have no control over the HTML inside the `.block` */
+        …
     }
           
 }
-                                   // Line between blocks;
-.block--variation {                // A block with few extra modifications often used together
-    @extend .block;                // Only good use for @extend 
-    ...
+                                  /* Line between blocks */
+.block--variation {               /* A block with few extra modifications often used together */
+    @apply .block;                /* Only good use for @apply */
+    …
 }
     
-.block__element {                  // Separate class for readability, searchability
-    ...
+.block__element {                 /* Separate class for readability, searchability instead of `&__element`*/
+    …
 }
-
 
 ```
 
 
 ## File structure
 
-We typically use 8 folders and a main `app.scss` file:
+We typically use 5 folders and a main `app.scss` file:
 
 ```
-|-- base            : basic html elements
-|-- components      : single components
-|-- helpers         : helper classes
-|-- patterns        : more complex components with parent/child relations
-|-- settings        : variables
-|-- utility         
-|  |-- functions    : SCSS functions
-|  `-- mixins       : SCSS mixins
-|-- vendor          : custom files from 3rd party components like fancybox, select2 etc.
-|-- views           : non-reusable components specific for a view
-`-- app.scss        : main file
+|-- base       : basic html elements
+|-- components : single components
+|-- helpers    : helper classes
+|-- settings   : variables
+|-- vendor     : custom files from 3rd party components like fancybox, select2 etc.
+`-- app.css    : main file
 
 ```
 
 
-### App.scss
+### app.css
 
-- Source order shouldn't matter, except for order of folders: import npm libraries, settings and utilities first
+- We use `postcss-easy-import` for glob imports
+- Source order shouldn't matter, except for order of folders: import npm libraries, settings or utilities first
 - Import is done by glob pattern so files can be moved easily from eg. components to patterns
  
-```scss
+```css
 @import 'settings/**/*';
-@import '~normalize-css/normalize';
-@import 'utility/**/*';
 @import 'base/**/*';
 @import 'components/**/*';
-@import 'patterns/**/*';
 @import 'helpers/**/*';
 @import 'vendor/**/*';
-@import 'views/**/*'; 
 ```
 
 ### Base folder
 
-Contains sensible defaults for basic html elements. Example files and classes:
+Contains resets and sensible defaults for basic html elements. Example files and classes:
 
 ```
-|-- *.scss
-|-- html.scss
-|-- a.scss
-|-- p.scss
-|-- h.scss
-`--...
-
+|-- universal.css
+|-- html.css
+|-- a.css
+|-- p.css
+|-- hx.css (h1, h2, h3)
+|-- list.css (ul, ol, dl)
+`--…
 ```
-
-Example file `*.scss`:
-
-```scss
-* {
-    box-sizing: border-box;
-    position: relative;
-
-    &:after,
-    &:before {
-        box-sizing: border-box;
-    }
-}
-```
-
 
 ### Components folder
 
-Stand-alone reusable components with modifiers and variations.
+Stand-alone reusable components with their modifiers and variations.
 
 ```
-|-- alert.scss
-|-- avatar.scss
-`-- ...
-
+|-- alert.css
+|-- avatar.css
+`--…
 ```
-
-Excerpt from `alert.scss`:
-
-```scss
-.alert {
-    
-    ...
-
-    &.-small {
-        ...
-    }
-}
-
-.alert--success {
-    @extend .alert;
-    ...
-}
-
-```
-
 
 ### Helpers folder
 
 Stand-alone helper classes for small layout issues.
 
 ```
-|-- align.scss
-|-- margin.scss
-|-- padding.scss
-`-- ...
-
-```
-
-Excerpt from `margin.scss`:
-
-```scss
-.h-margin {
-    ...
-}
-
-.h-margin-none {
-    ...
-}
-
-.h-margin-small {
-    ...
-}
-
-.h-margin-medium {
-    ...
-}
-```
-
-
-### Patterns folder
-
-More complex reusable patterns with parent/child relations, modifiers and variations.
-
-```
-|-- footer.scss
-|-- grid.scss
-`-- ...
-
-```
-
-Excerpt from `grid.scss`:
-
-```scss
-.grid {
-    ...
-}
-
-.grid__col {
-
-    &.-width-1\/2 {
-        ...
-    }
-
-    &.-width-1\/3 {
-        ...
-    }
-
-    &.-width-2\/3 {
-        ...
-    }
-}
+|-- align.css
+|-- margin.css
+|-- padding.css
+`--…
 ```
 
 ### Settings folder
@@ -459,78 +360,10 @@ Excerpt from `grid.scss`:
 Settings for colors, breakpoints, typography. etc.
 
 ```
-|-- breakpoint.scss
-|-- color.scss
-|-- grid.scss
-`-- ...
-
-```
-
-Excerpt from `color.scss`:
-
-```scss
-$blue: (
-    lightest: #e6f5ff,
-    lighter: #8bcdff,
-    light: #2cb0de,
-    default: #0080c8,
-    dark: #047ac5,
-    darker: #024271,
-    darkest: #00284f,
-);
-```
-
-
-### Utility folder
-
-SCSS common mixins and functions.
-
-```
-|-- functions
-|   |--color.scss
-|   |--sass-map.scss
-|   `--...
-`-- mixins
-    |--background.scss
-    |--block.scss
-    `--...
-
-```
-
-Excerpt from `functions/color.scss`:
-
-```scss
-@function blue($key: default, $opacity: 1) {
-    ...
-}
-
-@function green($key: default, $opacity: 1) {
-    ...
-}
-
-@function gray($key: default, $opacity: 1) {
-    ...
-}
-```
-
-Excerpt from `mixins/block.scss`:
-
-```scss
-@mixin block-reset {
-    ...
-}
-
-@mixin block-cover($position: absolute) {
-    ...
-}
-
-@mixin block-tag($color, $background-color) {
-    ...
-}
-
-@mixin block-clearfix {
-    ...
-}
+|-- breakpoint.css
+|-- color.css
+|-- grid.css
+`--…
 ```
 
 ### Vendor folder
@@ -538,46 +371,10 @@ Excerpt from `mixins/block.scss`:
 Imported and customized SCSS from 3rd party components (this is the syntactical Wild West).
 
 ```
-|-- fancybox.scss
-|-- select2.scss
-`-- ...
-
+|-- fancybox.css
+|-- select2.css
+`-- …
 ```
-
-### View folder
-
-Non-reusable CSS rules tied to specific views. Consider this the exception, and try to keep this folder empty. 
-
-```
-|-- auth.scss
-|-- home.scss
-`-- ...
-
-```
-
-Excerpt from `auth.scss`:
-
-```scss
-.v-auth{
-    ...
-}
-
-.v-auth__gravatar{
-    ...
-}
-```
-
-## Tools
-
-### Spatie-scss
-
-[@spatie/scss](https://github.com/spatie/scss) is a small npm package that is used to kickstart CSS authoring with default settings, mixins, functions etc.
-It lacks the `vendor` and `view` folders, since these are specific to every project.
-
-### Code Style
-- Install cscomb globally via `npm i csscomb -g` 
-- Put a `.csscomb.json` in root dir of your project
-- Run `csscomb resources`
 
 ## Inspiration
 
