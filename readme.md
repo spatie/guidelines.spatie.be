@@ -8,7 +8,7 @@ Install this package by running cloning this repository and install like you nor
 
 - Run `composer install` and `npm install yarn`
 - Run `yarn` and `yarn run dev` to generate assets
-- Copy .env.example to .env and fill your values (`php artisan key:generate`, database, pusher values etc)
+- Copy `.env.example` to `.env` and fill your values
 
 ## Postcardware
 
