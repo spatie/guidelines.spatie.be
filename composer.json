@@ -12,6 +12,7 @@
         "laravel/tinker": "~1.0",
         "league/commonmark": "^0.15.4",
         "spatie/laravel-collection-macros": "^2.2",
+        "spatie/laravel-googletagmanager": "^2.3",
         "spatie/laravel-menu": "^2.1",
         "spatie/laravel-responsecache": "^3.2",
         "spatie/laravel-tail": "^1.4"

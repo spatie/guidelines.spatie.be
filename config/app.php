@@ -172,6 +172,7 @@ return [
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
+        Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
 
 
         /*
@@ -233,6 +234,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
 
     ],
 

@@ -20,6 +20,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body @if($background ?? false) class="waves" @endif>
+    @include('googletagmanager::script')
     {{ $slot }}
 </body>
 </html>
