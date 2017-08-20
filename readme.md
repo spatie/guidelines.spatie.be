@@ -1,4 +1,4 @@
-# guidelines.spatie.be [![Composer Cache](https://shield.with.social/cc/github/spatie/guidelines.spatie.be/master.svg?style=flat-square)](https://packagist.org/packages/laravel/framework)
+# guidelines.spatie.be
 
 This repo contains the source code for [our guidelines site](https://guidelines.spatie.be).
 
