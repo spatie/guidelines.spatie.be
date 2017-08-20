@@ -13,7 +13,7 @@
 
 ## About Laravel
 
-First and foremost, Laravel provides the most value when you write things things like Laravel intended you to. If there's a documented way to achieve something, follow it. Whenever you do something differently, make sure you have a justification for *why* you didn't follow the defaults.
+First and foremost, Laravel provides the most value when you write things the way Laravel intended you to write. If there's a documented way to achieve something, follow it. Whenever you do something differently, make sure you have a justification for *why* you didn't follow the defaults.
 
 ## General PHP Rules
 
@@ -37,7 +37,7 @@ return [
 ];
 ```
 
-Try to avoid using the `env` helper outside of configuration files. Create a configuration value from the `env` variable like above.
+Avoid using the `env` helper outside of configuration files. Create a configuration value from the `env` variable like above.
 
 ## Routing
 
@@ -51,7 +51,7 @@ https://spatie.be/jobs/front-end-developer
 Route names must use camelCase.
 
 ```php
-Route::view('open-source', 'OpenSourceController@index')->name('openSource');
+Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 ```
 
 ```html
@@ -145,7 +145,7 @@ class OpenSourceController
 
 ## Validation
 
-All custom validation rules most use snake_case:
+All custom validation rules must use snake_case:
 
 ```php
 Validator::extend('organisation_type', function ($attribute, $value) {
@@ -155,7 +155,7 @@ Validator::extend('organisation_type', function ($attribute, $value) {
 
 ## Blade Templates
 
-Indent using four space.
+Indent using four spaces.
 
 ```html
 <a href="/open-source">
