@@ -36,7 +36,7 @@ Once a project goes live, the `develop` branch gets deleted. All future commits 
 There's no strict ruling on feature branch names, just make sure it's clear enough to know what they're for. Branches may only contain lowercase letters and hyphens.
 
 - Bad: `feature/mailchimp`, `random-things`, `develop`
-- Good: `feature-mailchimp`, `fix-deliverycosts` of `updates-june-2016`
+- Good: `feature-mailchimp`, `fix-deliverycosts` or `updates-june-2016`
 
 ### Pull requests
 
