@@ -21,7 +21,7 @@ If the repo concerns something else, for example a package, it's name should be 
 
 ## Branches
 
-If you're going to remember on thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
+If you're going to remember one thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
 
 ### Projects in initial development
 
