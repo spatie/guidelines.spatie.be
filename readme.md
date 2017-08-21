@@ -19,7 +19,7 @@ Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
 All postcards are published [on our website](https://spatie.be/en/opensource/postcards).
 
 ## Support
-This dashboard is tailormade for us. We do not follow [semver](http://semver.org) for this project and do not provide support whatsoever. However if you're a bit familiar with Laravel you should easily find your way.
+These guidelines are tailormade for us. We do not follow [semver](http://semver.org) for this project and do not provide support whatsoever. However if you're a bit familiar with Laravel you should easily find your way.
 
 ## License
 
