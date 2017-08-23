@@ -12,7 +12,7 @@ Example: `spatie/guidelines.spatie.be`
 
 1. Provision a new server on Forge. Use a kebab-cased version of the domain name for the droplet (example: `guidelines-spatie-be`)
 1. Create a new site with root `/current/public`
-1. Ensure that there's a database with a sane name
+1. Ensure that there's a database with a same name
 1. Run our ansible scripts on the freshly provisioned server
 1. Start one or two queue workers: `default`, and if using Blender `media_queue`
 1. Update the relevant `.env` variables. Don't forget to add the necessary service API keys later.
