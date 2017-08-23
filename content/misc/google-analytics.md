@@ -6,7 +6,7 @@
 
 1. Go to `Admin > View > Filters` and create a new filter
 2. Choose `Custom`, with "Include", field "Hostname", filter pattern *your-website-url*.
-3. If there's Analytics data available, you can verify that the filter works a intended
+3. If there's Analytics data available, you can verify that the filter works as intended
 4. Don't forget to save!
 
 ## Google Tag Manager Best practices

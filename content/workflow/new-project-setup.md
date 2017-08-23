@@ -2,7 +2,7 @@
 
 ## Git
 
-If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone it's main repository and remove the `.git` folder. This will be the base application for your new project.
+If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone its main repository and remove the `.git` folder. This will be the base application for your new project.
 
 Create a repository on the Spatie organization on GitHub using the [repo naming rules](https://guidelines.spatie.be/workflow/version-control#repo-naming-conventions).
 
@@ -23,7 +23,7 @@ Example: `spatie/guidelines.spatie.be`
 
 Our Blender sites use a few third party services. Here's a checklist on what needs to be set up.
 
-Unless specified otherwise, use the website's domain name as it's identifier (API key name, property name, etc.)
+Unless specified otherwise, use the website's domain name as its identifier (API key name, property name, etc.)
 
 1. Create a new **Sendgrid** API key
 1. Create a new **Google Analytics** property

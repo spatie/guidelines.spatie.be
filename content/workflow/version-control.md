@@ -4,7 +4,7 @@ All our projects use Git, mostly with a repository hosted on GitHub. Since we're
 
 ## Repo naming conventions
 
-If the repo contains the source code of the a site it's name should be the main naked domain name of that site. It should be lowercased.
+If the repo contains the source code of the a site its name should be the main naked domain name of that site. It should be lowercased.
 
 - Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
 - Good: `spatie.be`
@@ -14,14 +14,14 @@ Sites that are hosted on a subdomain may use that subdomain in their name
 - Bad: `spatie.be-guidelines`
 - Good: `guidelines.spatie.be`
 
-If the repo concerns something else, for example a package, it's name should be kebab-cased.
+If the repo concerns something else, for example a package, its name should be kebab-cased.
 
 - Bad: `LaravelBackup`, `Spoon`
 - Good: `laravel-backup`, `spoon`
 
 ## Branches
 
-If you're going to remember one thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
+If you're going to remember one thing in this guide, remember this: **Once a project has gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active; stale branches should get cleaned up accordingly.
 
 ### Projects in initial development
 
@@ -55,7 +55,7 @@ Ideally, rebase your branch regularly to reduce the chance of merge conflicts.
 
 ## Commits
 
-There's not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project's gone live, descriptive commit messages are required. Always use present tense in commit messages.
+There's not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project has gone live, descriptive commit messages are required. Always use present tense in commit messages.
 
 - Non-descriptive: `wip`, `commit`, `a lot`, `solid`
 - Descriptive: `Update deps`, `Fix vat calculation in delivery costs`

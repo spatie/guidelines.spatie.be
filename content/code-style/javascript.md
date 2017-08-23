@@ -14,7 +14,7 @@
 
 ## ESLint
 
-This guide should be used side by side with our base ESLint configuration file, which has it's own repository and is available on npm.
+This guide should be used side by side with our base ESLint configuration file, which has its own repository and is available on npm.
 
 https://github.com/spatie/eslint-config-spatie
 
@@ -362,7 +362,7 @@ An arrow function's parameter brackets must be omitted if the function is a one-
 ['a', 'b'].map((a) => a.toUpperCase());
 ```
 
-If the arrow function has it's own block, parameters must be surrounded by brackets.
+If the arrow function has its own block, parameters must be surrounded by brackets.
 
 ```js
 // Good, although according to this style guide you shouldn't be using an
