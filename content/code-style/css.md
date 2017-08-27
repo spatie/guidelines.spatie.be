@@ -143,7 +143,7 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 - All styling is done by classes (except for HTML that is out of our control)
 - Avoid #id's for styling
 - Make elements easily reusable, moveable in a project, or between projects
-- Avoid multiple components on 1 DOM-element, break them up
+- Avoid multiple components on 1 DOM-element. Break them up.
 
 ```html
 <!-- Try to avoid, news padding or margin could break the grid--> 
