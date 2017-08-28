@@ -5,7 +5,7 @@
         <nav class="sidebar__contents">
             <div class="sidebar__logo">
                 <a href="https://spatie.be" target="spatie">
-                    @include('svg.logo')
+                    <img src="/images/logotype.png">
                 </a>
             </div>
             <div class="sidebar__home">

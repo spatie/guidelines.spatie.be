@@ -6,13 +6,13 @@ All our projects use Git, mostly with a repository hosted on GitHub. Since we're
 
 If the repo contains the source code of the a site it's name should be the main naked domain name of that site. It should be lowercased.
 
-- Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
-- Good: `spatie.be`
+- Bad: `https://www.adaptivemedia.se`, `www.adaptivemedia.se`
+- Good: `adaptivemedia.se`
 
 Sites that are hosted on a subdomain may use that subdomain in their name
 
-- Bad: `spatie.be-guidelines`
-- Good: `guidelines.spatie.be`
+- Bad: `adaptivemedia.se-guidelines`
+- Good: `guidelines.adaptivemedia.se`
 
 If the repo concerns something else, for example a package, it's name should be kebab-cased.
 
@@ -21,7 +21,7 @@ If the repo concerns something else, for example a package, it's name should be 
 
 ## Branches
 
-If you're going to remember one thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly.
+If you're going to remember one thing in this guide, remember this: **Once a project's gone live, the master branch must always be stable**. It should be safe to deploy the master branch to production at all times. All branches are assumed to be active, stale branches should get cleaned up accordingly. The develop branch will generally hold commits for the next release.
 
 ### Projects in initial development
 
@@ -31,16 +31,16 @@ Feature branches are optional, if you'd like to create a feature branch, make su
 
 ### Live projects
 
-Once a project goes live, the `develop` branch gets deleted. All future commits to `master` must be added through a feature branch. In most cases, it's preferred to squash your commits on merge.
+Once a project goes live, all future commits to `master` and `develop` must be added through a feature/hotfix/changes branch. In most cases, it's preferred to squash your commits on merge.
 
 There's no strict ruling on feature branch names, just make sure it's clear enough to know what they're for. Branches may only contain lowercase letters and hyphens.
 
-- Bad: `feature/mailchimp`, `random-things`, `develop`
-- Good: `feature-mailchimp`, `fix-deliverycosts` or `updates-june-2016`
+- Bad: `feature-mailchimp`, `random-things`, `fixes`
+- Good: `feature/mailchimp`, `hotfix/delivery-costs` or `changes/updates-june-2016`
 
 ### Pull requests
 
-Merging branches via GitHub pull requests isn't a requirement, but can be useful if:
+Merging branches via GitHub pull requests isn't a requirement, but encouraged and can be useful if:
 
 - You want a peer to review your changes
 - You want to ensure your branch can be merged and commits can be squashed via an interface
@@ -50,14 +50,14 @@ Merging branches via GitHub pull requests isn't a requirement, but can be useful
 
 Ideally, rebase your branch regularly to reduce the chance of merge conflicts.
 
-- If you want to deploy a feature branch to master, use `git merge <branch> --squash`
+- If you want to deploy a feature branch directly to master, use `git merge <branch> --squash`
 - If your push is denied, rebase your branch first using `git rebase`
 
 ## Commits
 
-There's not strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project's gone live, descriptive commit messages are required. Always use present tense in commit messages.
+There's not a strict ruling on commits in projects in initial development, however, descriptive commit messages are recommended. After a project's gone live, descriptive commit messages are required. Always use present tense in commit messages.
 
-- Non-descriptive: `wip`, `commit`, `a lot`, `solid`
+- Non-descriptive: `wip`, `commit`, `fixes`
 - Descriptive: `Update deps`, `Fix vat calculation in delivery costs`
 
 Ideally, prefer granular commits.
@@ -71,17 +71,7 @@ Ideally, prefer granular commits.
 
 If you've made multiple changes but want to split them into more granular commits, use `git add -p`. This will open an interactive session in which you can choose which chunks you want to stage for your commit.
 
-### Moving commits to a new branch
-
-First, create your new branch, then revert the current branch, and finally checkout the new branch.
-
-Don't do this to commits that have already been pushed without double checking with your collaborators!
-
-```bash
-git branch my-branch
-git reset --hard HEAD~3 # OR git reset --hard <commit>
-git checkout my-branch
-```
+### TODO - more tips
 
 ## Resources
 

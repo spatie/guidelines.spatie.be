@@ -143,16 +143,6 @@ class OpenSourceController
 }
 ```
 
-## Validation
-
-All custom validation rules must use snake_case:
-
-```php
-Validator::extend('organisation_type', function ($attribute, $value) {
-    return OrganisationType::isValid($value);
-});
-```
-
 ## Blade Templates
 
 Indent using four spaces.
@@ -161,14 +151,6 @@ Indent using four spaces.
 <a href="/open-source">
     Open Source
 </a>
-```
-
-Don't add spaces after control structures.
-
-```html
-@if($condition)
-    Something
-@endif
 ```
 
 ## Authorization
@@ -198,9 +180,6 @@ Comments should be avoided as much as possible by writing expressive code. If yo
 ```php
 // There should be space before a single line comment.
 
-/*
- * If you need to explain a lot you can use a comment block. Notice the
- * single * on the first line. Comment blocks don't need to be three
- * lines long or three characters shorter than the previous line.
- */
+// If you need to explain a lot you can use multiple comment lines.
+// It's just pretty simple.
 ```

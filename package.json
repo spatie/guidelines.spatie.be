@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
+    "cross-env": "^5.0.5",
     "highlight.js": "^9.1.0",
     "laravel-mix": "^1.4.0",
     "postcss": "^5.0.19",
