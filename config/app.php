@@ -167,11 +167,6 @@ return [
          * Package Service Providers...
          */
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Laravel\Tinker\TinkerServiceProvider::class,
-        Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
-        Spatie\Menu\Laravel\MenuServiceProvider::class,
-        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
-        Spatie\Tail\TailServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
 
 
@@ -179,10 +174,6 @@ return [
          * Application Service Providers...
          */
         App\Navigation\NavigationServiceProvider::class,
-        // App\Providers\AppServiceProvider::class,
-        // App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        // App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],
