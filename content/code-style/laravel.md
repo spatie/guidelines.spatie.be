@@ -3,6 +3,7 @@
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
 - [Configuration](#configuration)
+- [Artisan commands](#artisan-commands)
 - [Routing](#routing)
 - [Controllers](#controllers)
 - [Views](#views)
@@ -38,6 +39,18 @@ return [
 ```
 
 Avoid using the `env` helper outside of configuration files. Create a configuration value from the `env` variable like above.
+
+## Artisan commands
+
+The names given to artisan commands should all be kebab-cased.
+
+```bash
+# Good
+php artisan delete-old-records
+
+# Bad
+php artisan deleteOldRecords
+```
 
 ## Routing
 
