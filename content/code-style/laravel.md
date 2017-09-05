@@ -56,7 +56,6 @@ A command should always give some feedback on what the result is. Minimally you 
 
 ```php
 // in a Command
-
 public function handle()
 {
     // do some work
