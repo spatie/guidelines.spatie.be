@@ -14,13 +14,25 @@
         </header>
         <section class="home__introduction">
             <p class="-large">
-                This site contains a set of guidelines we use to bring our projects to a good end. We decided to document our workflow because consistency is one of the most valuable traits of maintainable software.
+                This site contains a set of guidelines we use to bring our
+                projects to a good end. We decided to document our workflow
+                because consistency is one of the most valuable traits of
+                maintainable software.
             </p>
             <p>
-                The contents of this site exist for ourselves—more importantly, our future selves—and for giving future collegues a reference to our way of doing things and their quirks. The guidelines cover workflow, code style, and other little things we consider worth documenting.
+                The contents of this site exist for ourselves—more importantly,
+                our future selves—and for giving future collegues a reference to
+                our way of doing things and their quirks. The guidelines cover
+                workflow, code style, and other little things we consider
+                worth documenting.
             </p>
             <p>
-                All pages are hosted on <a href="https://github.com/spatie/guidelines.adaptivemedia.se" target="spatie">GitHub</a>, so edits and improvements are welcome. Note that these are our own opinionated ideas, so we'll be finicky when it comes to substantial changes.
+                All pages are hosted on
+                <a href="https://github.com/spatie/guidelines.adaptivemedia.se">
+                    GitHub
+                </a>, so edits and improvements are welcome.
+                Note that these are our own opinionated ideas, so we'll be
+                finicky when it comes to substantial changes.
             </p>
         </section>
         <nav class="home__index">
@@ -29,7 +41,7 @@
             </div>
             <footer class="home__index__footer">
                 <a href="https://adaptivemedia.se" target="spatie">
-                    © adaptivemedia.se, Antwerp
+                    © adaptivemedia.se, Stockholm
                 </a>
             </footer>
         </nav>
