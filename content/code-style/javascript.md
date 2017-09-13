@@ -434,22 +434,22 @@ If a Vue component has so many props (or listeners, directives, ...) that they d
 ```html
 <template>
     <!-- Good -->
-    <my-component>
+    <my-component
         v-if="shouldDisplay"
         myProp="value"
         @change="handleEvent"
-    ><my-component>
+    ></my-component>
 </template>
 ```
 
 ```html
 <template>
     <!-- Bad: wrong indentation, closing `>` is not correct placed -->
-    <my-component>
+    <my-component
             v-if="shouldDisplay"
             myProp="value"
             @change="handleEvent">
-    <my-component>
+    </my-component>
 </template>
 ```
 
