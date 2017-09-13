@@ -11,6 +11,7 @@
 - [Blade Templates](#blade-templates)
 - [Authorization](#authorization)
 - [Comments](#comments)
+- [Translations](#translations)
 
 ## About Laravel
 
@@ -230,4 +231,14 @@ Comments should be avoided as much as possible by writing expressive code. If yo
  * single * on the first line. Comment blocks don't need to be three
  * lines long or three characters shorter than the previous line.
  */
+```
+
+## Translations
+
+Translations must be rendered with the `__` function. We prefer using this over `@lang` in Blade views because `__` can be used in both Blade views and regular PHP code. Here's an example:
+
+```php
+<h2>{{ __('newsletter.form.title') }}</h2>
+
+{!! __('newsletter.form.description') !!}
 ```
