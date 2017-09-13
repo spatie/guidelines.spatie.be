@@ -444,7 +444,7 @@ If a Vue component has so many props (or listeners, directives, ...) that they d
 
 ```html
 <template>
-    <!-- Bad: wrong indentation for props, closing `>` is not correct placed -->
+    <!-- Bad: wrong indentation, closing `>` is not correct placed -->
     <my-component>
             v-if="shouldDisplay"
             myProp="value"
