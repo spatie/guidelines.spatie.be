@@ -425,20 +425,31 @@ function uploader({
 If a Vue component has so many props (or listeners, directives, ...) that they don't fit on one line anymore you need to put every prop on it's own line. Every line needs to be intended with 4 spaces. The closing `>` goes on a new unintended line followed by the closing tag.
 
 ```html
-<!-- Good -->
-<template
-    myFirstProp="value1"
-    mySecondProp="value2"
-    myThirdProp="value3"
+<template>
+    <!-- Good -->
+    <my-component myProp="value"><my-component>
 ></template>
 ```
 
 ```html
-<!-- Bad: wrong indentation, closing `>` is not correct placed -->
-<template
-        myFirstProp="value1"
-        mySecondProp="value2"
-        myThirdProp="value3">
+<template>
+    <!-- Good -->
+    <my-component>
+        v-if="shouldDisplay"
+        myProp="value"
+        @change="handleEvent"
+    ><my-component>
+</template>
+```
+
+```html
+<template>
+    <!-- Bad: wrong indentation for props, closing `>` is not correct placed -->
+    <my-component>
+            v-if="shouldDisplay"
+            myProp="value"
+            @change="handleEvent">
+    <my-component>
 </template>
 ```
 
