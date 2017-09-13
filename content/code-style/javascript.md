@@ -428,7 +428,7 @@ If a Vue component has so many props (or listeners, directives, ...) that they d
 <template>
     <!-- Good -->
     <my-component myProp="value"><my-component>
-></template>
+</template>
 ```
 
 ```html
