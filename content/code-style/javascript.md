@@ -11,6 +11,7 @@
 - [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
 - [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
 - [Object and Array Destructuring](#object-and-array-destructuring)
+- [Vue templates](#vue-templates)
 
 ## ESLint
 
@@ -417,6 +418,28 @@ function uploader({
 }) {
     // ...
 }
+```
+
+### Vue templates
+
+If a Vue component has so many props (or listeners, directives, ...) that they don't fit on one line anymore you need to put every prop on it's own line. Every line needs to be intended with 4 spaces. The closing `>` goes on a new unintended line followed by the closing tag.
+
+```html
+<!-- Good -->
+<template
+    myFirstProp="value1"
+    mySecondProp="value2"
+    myThirdProp="value3"
+></template>
+```
+
+```html
+<!-- Bad: wrong indentation, closing `>` is not correct placed -->
+<template
+        myFirstProp="value1"
+        mySecondProp="value2"
+        myThirdProp="value3">
+</template>
 ```
 
 ## Credits
