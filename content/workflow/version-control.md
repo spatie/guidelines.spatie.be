@@ -71,7 +71,16 @@ Ideally, prefer granular commits.
 
 If you've made multiple changes but want to split them into more granular commits, use `git add -p`. This will open an interactive session in which you can choose which chunks you want to stage for your commit.
 
-### TODO - more tips
+## New feature / changes
+
+We try to write code in the same manner and everyone can learn
+something new from each other. It's very welcomed to ask for 
+advise from someone on the team on how to structure a change
+in the application.
+
+This can be done either in person and/or via a 
+Work In Progress (WIP) PR that people can review 
+and give feedback on before to much code have been written.
 
 ## Resources
 

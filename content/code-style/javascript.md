@@ -11,6 +11,7 @@
 - [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
 - [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
 - [Object and Array Destructuring](#object-and-array-destructuring)
+- [Vue components](#vue-components)
 
 ## ESLint
 
@@ -418,6 +419,42 @@ function uploader({
     // ...
 }
 ```
+
+## Vue components
+Vue components are organized as following:
+
+```
+<template>
+</template>
+<script>
+</script>
+<style scoped>
+</style>
+```
+
+The `<script>`-tag is organized as following:
+```
+<script>
+    import Panel from './Panel';
+    
+    let someExternalVariableNotBoundToData = '';
+    
+    export default {
+        props: [],
+        data() { return {} },
+        computed: { },
+        watch: { },
+        created() { },
+        mounted() { },
+        // Other lifecycle-hooks
+        methods: { },
+        components: { Panel }
+    }
+</script>
+```
+
+Scoped styles are ok when the styles only belong to the component
+and is never reused outside of it.
 
 ## Credits
 

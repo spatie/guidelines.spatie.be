@@ -23,7 +23,7 @@
                 </form>
             @endauth
             <a href="https://spatie.be" target="spatie">
-                © spatie.be, Antwerp
+                © adaptivemedia.se, Stockholm
             </a>
         </footer>
     </section>

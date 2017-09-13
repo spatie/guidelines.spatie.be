@@ -4,7 +4,7 @@
             <div class="home__header__inner">
                 <div class="home__logo">
                     <a href="https://adaptivemedia.se">
-                        <img src="/images/logotype.jpg">
+                        <img src="/images/logotype.png">
                     </a>
                 </div>
                 <h1 class="home__title">
@@ -28,7 +28,7 @@
             </p>
             <p>
                 All pages are hosted on
-                <a href="https://github.com/spatie/guidelines.adaptivemedia.se">
+                <a href="https://github.com/adaptivemedia/guidelines.adaptivemedia.se">
                     GitHub
                 </a>, so edits and improvements are welcome.
                 Note that these are our own opinionated ideas, so we'll be
