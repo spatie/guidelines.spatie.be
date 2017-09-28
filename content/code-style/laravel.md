@@ -93,11 +93,11 @@ All routes have an http verb, that's why we like to put the verb first when defi
 ```php
 // good: all http verbs come first
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('open-source', 'OpenSourceController@index')->name('openSource');
+Route::get('open-source', 'OpenSourceController@index')->middleware('openSource');
 
 // bad: http verbs not easily scannable
 Route::name('home')->get('/', 'HomeController@index');
-Route::get('open-source', 'OpenSourceController@index')->name('openSource');
+Route::middleware('openSource')->get('OpenSourceController@index');
 ```
 
 ## Controllers
