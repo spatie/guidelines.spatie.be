@@ -91,11 +91,11 @@ Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 All routes have an http verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readble. Any other route options should come after it.
 
 ```php
-// good
+// good: all http verbs come first
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 
-// bad
+// bad: http verbs not easily scannable
 Route::name('home')->get('/', 'HomeController@index');
 Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 ```
