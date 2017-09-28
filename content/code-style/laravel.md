@@ -132,7 +132,7 @@ class PostsController
         return response(null, 200);
     }
 
-    public function unfavorite()
+    public function unfavorite(Post $post)
     {
         request()->user()->favorites()->detach($post);
         
@@ -153,7 +153,7 @@ class FavoritePostsController
         return response(null, 200);
     }
 
-    public function destroy()
+    public function destroy(Post $post)
     {
         request()->user()->favorites()->detach($post);
         
