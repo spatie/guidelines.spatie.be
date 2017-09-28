@@ -88,6 +88,18 @@ Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 </a>
 ```
 
+All routes have a http verb, that's why we like to put it first when defining a route. It makes a group of routes very readble. Other route options, should come after it.
+
+```php
+// good
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('open-source', 'OpenSourceController@index')->name('openSource');
+
+// bad
+Route::name('home')->get('/', 'HomeController@index');
+Route::get('open-source', 'OpenSourceController@index')->name('openSource');
+```
+
 ## Controllers
 
 Controllers that control a resource must use the plural resource name.
