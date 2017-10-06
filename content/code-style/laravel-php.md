@@ -75,6 +75,24 @@ Always use fully qualified class names in docblocks.
  */
 ```
 
+## Ternary operators
+
+Use multi-line ternay operators unless it's a really short expression.
+
+```php
+// Good
+
+$result = $flag && $object instanceof Model
+    ? $object->name
+    : 'A default value';
+
+$name = $isFoo ? 'foo' : 'bar';
+
+// Bad
+
+$result = $flag && $object instanceof Model ? $object->name : 'A default value';
+```
+
 ## Comments
 
 Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this:
