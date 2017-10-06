@@ -16,6 +16,7 @@ class HeadingRenderer extends BaseHeadingRenderer
         $id = str_slug($element->getContents());
 
         $element->setAttribute('id', $id);
+        
         $element->setContents(
             $element->getContents() .
             new HtmlElement('a', ['href' => "#{$id}", 'class' => 'anchor-link'])

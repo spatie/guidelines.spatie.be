@@ -13,9 +13,11 @@ class MarkdownConverter
     public static function convert($markdown)
     {
         $environment = Environment::createCommonMarkEnvironment();
+        
         $environment->addBlockRenderer(Heading::class, new HeadingRenderer());
 
         $parser = new DocParser($environment);
+        
         $htmlRenderer = new HtmlRenderer($environment);
 
         $document = $parser->parse($markdown);
