@@ -1,12 +1,14 @@
 # New Project Setup
 
-## Git
+## Git Repository
 
 If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone its main repository and remove the `.git` folder. This will be the base application for your new project.
 
 Create a repository on the Spatie organization on GitHub using the [repo naming rules](https://guidelines.spatie.be/workflow/version-control#repo-naming-conventions).
 
 Example: `spatie/guidelines.spatie.be`
+
+Lastly, update the `.env.example` file with values relevant to the project (database name, app url, our Slack webhook url, etc.)
 
 ## Server
 
