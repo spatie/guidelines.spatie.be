@@ -78,11 +78,10 @@ Always use fully qualified class names in docblocks.
 
 ## Ternary operators
 
-Use multi-line ternary operators unless it's a really short expression.
+Every portion of a ternary expression should be on it's own line unless it's a really short expression.
 
 ```php
 // Good
-
 $result = $object instanceof Model
     ? $object->name
     : 'A default value';
@@ -90,8 +89,9 @@ $result = $object instanceof Model
 $name = $isFoo ? 'foo' : 'bar';
 
 // Bad
-
-$result = $object instanceof Model ? $object->name : 'A default value';
+$result = $object instanceof Model ?
+    $object->name : 
+   'A default value';
 ```
 
 ## Comments
