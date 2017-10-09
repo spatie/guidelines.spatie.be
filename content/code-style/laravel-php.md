@@ -3,6 +3,7 @@
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
 - [Docblocks](#docblocks)
+- [Ternary operators](#ternary-operators)
 - [Comments](#comments)
 - [Configuration](#configuration)
 - [Artisan commands](#artisan-commands)
@@ -77,12 +78,12 @@ Always use fully qualified class names in docblocks.
 
 ## Ternary operators
 
-Use multi-line ternay operators unless it's a really short expression.
+Use multi-line ternary operators unless it's a really short expression.
 
 ```php
 // Good
 
-$result = $flag && $object instanceof Model
+$result = $object instanceof Model
     ? $object->name
     : 'A default value';
 
@@ -90,7 +91,7 @@ $name = $isFoo ? 'foo' : 'bar';
 
 // Bad
 
-$result = $flag && $object instanceof Model ? $object->name : 'A default value';
+$result = $object instanceof Model ? $object->name : 'A default value';
 ```
 
 ## Comments
