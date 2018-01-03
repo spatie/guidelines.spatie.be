@@ -85,12 +85,12 @@ git checkout my-branch
 
 ### Squashing commits already pushed
 
-**Only execute when you are sure that no-one else pushed changes during your commits**
+Only execute when you are sure that no-one else pushed changes during your commits.
 
 First, copy the SHA from the commit previous to your commits that need to be squashed.
 
 ```bash
-git reset --soft <SHA>
+git reset --soft <commit>
 git commit -m "your new message"
 git push --force
 ```
