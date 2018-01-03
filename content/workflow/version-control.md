@@ -83,6 +83,18 @@ git reset --hard HEAD~3 # OR git reset --hard <commit>
 git checkout my-branch
 ```
 
+### Squashing commits already pushed
+
+**Only execute when you are sure that no-one else pushed changes during your commits**
+
+First, copy the SHA from the commit previous to your commits that need to be squashed.
+
+```bash
+git reset --soft <SHA>
+git commit -m "your new message"
+git push --force
+```
+
 ## Resources
 
 - Most of this is based on the [GitHub Flow](https://guides.github.com/introduction/flow/)
