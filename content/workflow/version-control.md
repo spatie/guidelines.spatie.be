@@ -97,7 +97,7 @@ git push --force
 
 ### Cleaning up local branches
 
-After a while, you'll probably have a few stale branches in your local repository. Branches that don't exist upstream—so, branches that only exist on your machine—can be cleaned up wuth `git remote prune origin`. If you want to ensure you're not going to delete any unwanted branches, add a `--dry-run` flag.
+After a while, you'll end up with a few stale branches in your local repository. Branches that don't exist upstream can be cleaned up with `git remote prune origin`. If you want to ensure you're not about to delete something important, add a `--dry-run` flag.
 
 ## Resources
 
