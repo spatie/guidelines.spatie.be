@@ -95,6 +95,10 @@ git commit -m "your new message"
 git push --force
 ```
 
+### Cleaning up local branches
+
+After a while, you'll probably have a few stale branches in your local repository. Branches that don't exist upstream—so, branches that only exist on your machine—can be cleaned up wuth `git remote prune origin`. If you want to ensure you're not going to delete any unwanted branches, add a `--dry-run` flag.
+
 ## Resources
 
 - Most of this is based on the [GitHub Flow](https://guides.github.com/introduction/flow/)
