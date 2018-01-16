@@ -4,7 +4,7 @@ All our projects use Git, mostly with a repository hosted on GitHub. Since we're
 
 ## Repo naming conventions
 
-If the repo contains the source code of the a site its name should be the main naked domain name of that site. It should be lowercased.
+If the repo contains the source code of a site its name should be the main naked domain name of that site. It should be lowercased.
 
 - Bad: `https://www.spatie.be`, `www.spatie.be`, `Spatie.be`
 - Good: `spatie.be`
