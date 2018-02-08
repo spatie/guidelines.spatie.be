@@ -9,9 +9,9 @@
     "type": "project",
     "require": {
         "php": ">=7.1.0",
-        "fideloper/proxy": "~3.3",
+        "fideloper/proxy": "~4.0",
         "google/apiclient": "^2.2",
-        "laravel/framework": "5.5.*",
+        "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "league/commonmark": "^0.15.4",
@@ -27,7 +27,8 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6.0",
-        "filp/whoops": "~2.0"
+        "filp/whoops": "~2.0",
+        "nunomaduro/collision": "~1.1"
     },
     "autoload": {
         "classmap": [
