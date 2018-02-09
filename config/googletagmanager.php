@@ -13,7 +13,7 @@ return [
     'enabled' => env('GOOGLE_TAG_MANAGER_ENABLED'),
 
     /*
-     * If you want to use some macro's you 'll probably store them
+     * If you want to use some macro's you'll probably store them
      * in a dedicated file. You can optionally define the path
      * to that file here and we will load it for you.
      */
