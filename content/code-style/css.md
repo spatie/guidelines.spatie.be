@@ -87,7 +87,7 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 - A modifier changes only simple properties of a component, or adds a property
 - Modifiers are **always tied** to a component, don't work on their own (make sure you never write "global" modifier selectors)
 - Multiple modifiers are possible. Each modifier is responsible for a property: `class="alert -success -rounded -large"`. If you keep using these modifiers together, consider a **variation** (see below)
-- Since modifiers have a single responsability, the order in HTML or CSS shouldn't matter
+- Since modifiers have a single responsibility, the order in HTML or CSS shouldn't matter
 
 ### .component--variation
 
@@ -353,7 +353,7 @@ Stand-alone helper classes for small layout issues.
 
 ### Settings folder
 
-Settings for colors, breakpoints, typography, etc. You can start small with one `settings.css` and split them up in different files if your variables grow.
+Settings for colors, breakpoints, typography, etc. You can start small with one `settings.css` and split them up into different files if your variables grow.
 
 ```
 |-- breakpoint.css

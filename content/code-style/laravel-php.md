@@ -78,7 +78,7 @@ Always use fully qualified class names in docblocks.
 
 ## Ternary operators
 
-Every portion of a ternary expression should be on it's own line unless it's a really short expression.
+Every portion of a ternary expression should be on its own line unless it's a really short expression.
 
 ```php
 // Good
@@ -110,7 +110,7 @@ Comments should be avoided as much as possible by writing expressive code. If yo
 
 ## Whitespace
 
-Statements should have to breathe. In general always add blank lines between statements, unless they're a sequence of single-line equivalent operations. This isn't something enforcable, it's a matter of what looks best in it's context.
+Statements should have to breathe. In general always add blank lines between statements, unless they're a sequence of single-line equivalent operations. This isn't something enforceable, it's a matter of what looks best in its context.
 
 ```php
 // Good
@@ -241,7 +241,7 @@ Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 </a>
 ```
 
-All routes have an http verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readble. Any other route options should come after it.
+All routes have an http verb, that's why we like to put the verb first when defining a route. It makes a group of routes very readable. Any other route options should come after it.
 
 ```php
 // good: all http verbs come first
@@ -266,7 +266,7 @@ class PostsController
 
 Try to keep controllers simple and stick to the default CRUD keywords (`index`, `create`, `store`, `show`, `edit`, `update`, `destroy`). Extract a new controller if you need other actions.
 
-In the following example, we could have `PostsController@favorite`, and `PostsController@unfavorite`, or we could extract it to a seperate `FavoritePostsController`.
+In the following example, we could have `PostsController@favorite`, and `PostsController@unfavorite`, or we could extract it to a separate `FavoritePostsController`.
 
 ```php
 class PostsController
