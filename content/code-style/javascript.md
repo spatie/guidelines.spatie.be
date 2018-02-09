@@ -295,7 +295,7 @@ export function query(selector) {
 export const query = selector => document.querySelector(selector);
 ```
 
-Higher order functions can use arrow functions if it improves readability.
+Higher-order functions can use arrow functions if it improves readability.
 
 ```js
 function sum(a, b) {
@@ -422,7 +422,7 @@ function uploader({
 
 ### Vue templates
 
-If a Vue component has so many props (or listeners, directives, ...) that they don't fit on one line anymore you need to put every prop on it's own line. Every line needs to be intended with 4 spaces. The closing `>` goes on a new unintended line followed by the closing tag.
+If a Vue component has so many props (or listeners, directives, ...) that they don't fit on one line anymore you need to put every prop on its own line. Every line needs to be intended with 4 spaces. The closing `>` goes on a new unintended line followed by the closing tag.
 
 ```html
 <template>
