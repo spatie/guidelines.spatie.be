@@ -23,7 +23,7 @@ Lastly, update the `.env.example` file with values relevant to the project (data
 
 ## Services
 
-Our Blender sites use a few third party services. Here's a checklist on what needs to be set up.
+Our Blender sites use a few third party services. Here's a checklist of what needs to be set up.
 
 Unless specified otherwise, use the website's domain name as its identifier (API key name, property name, etc.)
 
