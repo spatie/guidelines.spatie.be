@@ -353,7 +353,7 @@ Stand-alone helper classes for small layout issues.
 
 ### Settings folder
 
-Settings for colors, breakpoints, typography, etc. You can start small with one `settings.css` and split them up in different files if your variables grow.
+Settings for colors, breakpoints, typography, etc. You can start small with one `settings.css` and split them up into different files if your variables grow.
 
 ```
 |-- breakpoint.css
