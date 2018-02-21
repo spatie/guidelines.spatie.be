@@ -7,7 +7,6 @@ use Spatie\Csp\Policies\Basic;
 
 class CustomCsp extends Basic
 {
-
     public function configure()
     {
         parent::configure();
