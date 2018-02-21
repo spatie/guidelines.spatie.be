@@ -17,7 +17,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6194432/608542/css/fonts.css" />
 
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script @nonce src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body @if($background ?? false) class="waves" @endif>
     @include('googletagmanager::script')
