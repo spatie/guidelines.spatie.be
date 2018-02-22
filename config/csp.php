@@ -10,9 +10,9 @@ return [
 
     /*
      * This policy which will be put in report only mode. This is great for testing out
-     * a new policy or changes to existing csp policy without breaking anyting.
+     * a new policy or changes to existing csp policy without breaking anything.
      */
-    'report_only_policy' => \App\CustomCsp::class,
+    'report_only_policy' => \App\Services\Csp\Policy::class,
 
     /*
      * All violations against the policy will be reported to this url.
