@@ -1,6 +1,6 @@
 # CSS Style Guide
 
-- [Preprocessing](#preprosessing)
+- [Preprocessing](#preprocessing)
 - [BEVM](#bevm)
 - [DOM structure](#dom-structure)
 - [Code style](#code-style)

@@ -7,7 +7,7 @@
 - [Semicolons](#semicolons)
 - [Variable Assignment](#variable-assignment)
 - [Variable Names](#variable-names)
-- [Comparisons](#comperisons)
+- [Comparisons](#comparisons)
 - [Function Keyword vs. Arrow Functions](#function-keyword-vs-arrow-functions)
 - [Arrow Function Parameter Brackets](#arrow-function-parameter-brackets)
 - [Object and Array Destructuring](#object-and-array-destructuring)
