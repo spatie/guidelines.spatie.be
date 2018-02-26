@@ -11,20 +11,18 @@ class Policy extends Basic
     {
         parent::configure();
 
-        $this->fonts();
-        $this->googleAnalytics();
-        $this->reportOnly();
+        $this
+            ->fonts()
+            ->googleAnalytics()
+            ->reportOnly();
     }
 
-    protected function googleAnalytics()
+    protected function googleAnalytics(): self
     {
-        // when JS is disabled.
-        $this
+        return $this
             ->addDirective(Directive::CHILD, 'https://www.googletagmanager.com')
             ->addDirective(Directive::FRAME, 'https://www.googletagmanager.com')
-            ->addDirective(Directive::WORKER, 'https://www.googletagmanager.com');
-
-        $this
+            ->addDirective(Directive::WORKER, 'https://www.googletagmanager.com')
             ->addDirective(Directive::CONNECT, 'https://www.google-analytics.com')
             ->addDirective(Directive::SCRIPT, 'https://www.google-analytics.com')
             ->addDirective(Directive::SCRIPT, 'https://www.googletagmanager.com')
@@ -32,9 +30,9 @@ class Policy extends Basic
             ->addDirective(Directive::SCRIPT, 'unsafe-inline');
     }
 
-    protected function fonts()
+    protected function fonts(): self
     {
-        $this
+        return $this
             ->addDirective(Directive::STYLE, ['https://cloud.typography.com', 'https://spatie.be'])
             ->addDirective(Directive::FONT, 'data:');
     }
