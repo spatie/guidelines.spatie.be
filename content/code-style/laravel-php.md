@@ -76,6 +76,56 @@ Always use fully qualified class names in docblocks.
  */
 ```
 
+Docblocks for class variables are required, as there's currently no other way to to typehint these.
+
+```php
+// Good
+
+class Foo
+{
+    /** @var \Spatie\Url\Url */
+    protected $url;
+    
+    /** @var string */
+    protected $name;
+}
+
+// Bad
+
+class Foo
+{
+    protected $url;
+    protected $name;
+}
+```
+
+When possible, docblocks should be written on one line.
+
+```php
+// Good
+
+/** @var string */
+/** @test */
+
+// Bad
+
+/**
+ * @test
+ */
+```
+
+If a variable has multiple types, the most common occurring type should be first.
+
+```php
+// Good
+
+/** @var \Spatie\Goo\Bar|null */
+
+// Bad
+
+/** @var null|\Spatie\Goo\Bar */
+```
+
 ## Ternary operators
 
 Every portion of a ternary expression should be on its own line unless it's a really short expression.
