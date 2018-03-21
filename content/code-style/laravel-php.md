@@ -3,6 +3,7 @@
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
 - [Docblocks](#docblocks)
+- [If statements](#if-statements)
 - [Ternary operators](#ternary-operators)
 - [Comments](#comments)
 - [Configuration](#configuration)
@@ -142,6 +143,20 @@ $name = $isFoo ? 'foo' : 'bar';
 $result = $object instanceof Model ?
     $object->name : 
    'A default value';
+```
+
+## If statements
+
+Always use curly brackets.
+
+```php
+// Good
+if ($condition) {
+   ...
+}
+
+// Bad
+if ($condition) ...
 ```
 
 ## Comments
