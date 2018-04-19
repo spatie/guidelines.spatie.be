@@ -318,6 +318,12 @@ Route::name('home')->get('/', 'HomeController@index');
 Route::middleware('openSource')->get('OpenSourceController@index');
 ```
 
+Route parameters should use camelCase.
+
+```php
+Route::get('news/{newsItem}', 'NewsItemsController@index');
+```
+
 ## Controllers
 
 Controllers that control a resource must use the plural resource name.
