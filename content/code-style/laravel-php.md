@@ -473,6 +473,6 @@ Naming things is often seen as one of the harder things in programming. That's w
 For a start the following classes should always be suffixed:
 
 - Resources: to avoid naming collisions with models
-- Controllers: by convention and to avoid naming collisions with model
+- Controllers: by convention and to avoid naming collisions with models
 - Listeners: to avoid naming collisions with jobs
 - Mailables: to avoid naming collisions with events
