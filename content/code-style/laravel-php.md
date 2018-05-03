@@ -15,6 +15,7 @@
 - [Blade Templates](#blade-templates)
 - [Authorization](#authorization)
 - [Translations](#translations)
+- [Naming Classes](#naming-classes)
 
 ## About Laravel
 
@@ -45,9 +46,9 @@ class Url
 {
     /**
      * Create a url from a string.
-     * 
+     *
      * @param string $url
-     * 
+     *
      * @return \Spatie\Url\Url
      */
     public static function fromString(string $url): Url
@@ -86,7 +87,7 @@ class Foo
 {
     /** @var \Spatie\Url\Url */
     protected $url;
-    
+
     /** @var string */
     protected $name;
 }
@@ -141,7 +142,7 @@ $name = $isFoo ? 'foo' : 'bar';
 
 // Bad
 $result = $object instanceof Model ?
-    $object->name : 
+    $object->name :
    'A default value';
 ```
 
@@ -346,20 +347,20 @@ class PostsController
     {
         // ...
     }
-    
+
     // ...
-    
+
     public function favorite(Post $post)
     {
         request()->user()->favorites()->attach($post);
-        
+
         return response(null, 200);
     }
 
     public function unfavorite(Post $post)
     {
         request()->user()->favorites()->detach($post);
-        
+
         return response(null, 200);
     }
 }
@@ -373,14 +374,14 @@ class FavoritePostsController
     public function create(Post $post)
     {
         request()->user()->favorites()->attach($post);
-        
+
         return response(null, 200);
     }
 
     public function destroy(Post $post)
     {
         request()->user()->favorites()->detach($post);
-        
+
         return response(null, 200);
     }
 }
@@ -464,3 +465,14 @@ Translations must be rendered with the `__` function. We prefer using this over 
 
 {!! __('newsletter.form.description') !!}
 ```
+
+## Naming Classes
+
+Naming things is often seen as one of the harder things in programming. That's why we've established some high level guidelines for naming classes.
+
+For a start the following classes should always be suffixed:
+
+- Resources: to avoid naming collisions with models
+- Controllers: by convention and to avoid naming collisions with model
+- Listeners: to avoid naming collisions with jobs
+- Mailables: to avoid naming collisions with events
