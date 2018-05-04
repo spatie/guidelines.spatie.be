@@ -472,6 +472,7 @@ Naming things is often seen as one of the harder things in programming. That's w
 
 ### Controllers
 
+<<<<<<< HEAD
 Generally controllers are named by the plural form of their corresponding resource and a `Controller` suffix. This is to avoid naming collisions with models that are often equally named.
 
 e.g. `UsersController` or `EventDaysController`
