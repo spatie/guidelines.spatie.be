@@ -12,10 +12,10 @@
 - [Controllers](#controllers)
 - [Views](#views)
 - [Validation](#validation)
-- [Blade Templates](#blade-templates)
+- [Blade templates](#blade-templates)
 - [Authorization](#authorization)
 - [Translations](#translations)
-- [Naming Classes](#naming-classes)
+- [Naming classes](#naming-classes)
 
 ## About Laravel
 
@@ -496,9 +496,9 @@ Events will often be fired before or after the actual event. This should be very
 
 E.g. `ApprovingLoan` before the action is completed and `LoanApproved` after the action is completed.
 
-### Listerens
+### Listeners
 
-Listeners will perform an action based on an incomming event. Their name should reflect that action with a `Listener` suffix. This might seem strange at first but will avoid naming collisions with jobs.
+Listeners will perform an action based on an incoming event. Their name should reflect that action with a `Listener` suffix. This might seem strange at first but will avoid naming collisions with jobs.
 
 E.g. `SendInvitationMailListener`
 
