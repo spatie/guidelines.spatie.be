@@ -2,6 +2,8 @@
 
 namespace App\Navigation;
 
+use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Support\ServiceProvider;
 
 class NavigationServiceProvider extends ServiceProvider
@@ -23,8 +25,13 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('navigation', function () {
-            return (new Navigation())->scanContent();
-        });
+        $this->app
+            ->when(Navigation::class)
+            ->needs(Filesystem::class)
+            ->give(function () {
+                return $this->app->make(FilesystemManager::class)->disk('content');
+            });
+
+        $this->app->singleton('navigation', Navigation::class);
     }
 }

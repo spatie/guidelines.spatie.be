@@ -1,3 +1,8 @@
+---
+title: CSS
+order: 2
+---
+
 # CSS Style Guide
 
 - [Preprocessing](#preprocessing)
@@ -13,17 +18,17 @@ We use PostCSS with [CSSNext](http://cssnext.io), but these principles are appli
 
 ## BEVM
 
-We use a BEM-like syntax with some custom accents. The 'variation' is a concept picked up from [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/). 
+We use a BEM-like syntax with some custom accents. The 'variation' is a concept picked up from [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/).
 
 We only use classes for styling, with the following ingredients:
 
 ```css
-.component                      /* Component */   
+.component                      /* Component */
 .component__element             /* Child */
 .component__element__element    /* Grandchild */
 
 .items                          /* Use plurals if possible */
-.item                        
+.item
 
 .-modifier                      /* Single property modifier, can be chained */
 
@@ -50,21 +55,21 @@ We only use classes for styling, with the following ingredients:
 <div class="news">
     <div class="news__item">
         <div class="news__item__publish-date">
-```     
+```
 
 Be descriptive with component elements. Consider `class="team__member"` instead of `class="team__item"`
 
 ```html
 <div class="team">
     <div class="team__member">
-```   
+```
 
 You can use plurals & singulars for readability. Consider `class="member"` instead of `class="members__member"`
 
 ```html
 <div class="members">
     <div class="member">
-```   
+```
 
 ### .-modifier
 
@@ -75,7 +80,7 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 ```css
 .button {
     &.-rounded {
-        …  
+        …
     }
 
     &.-active {
@@ -99,9 +104,9 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 .button--delete {
     /* Base button classes */
     …
-    
+
     /* Variations */
-    background-color: red; 
+    background-color: red;
     color: white;
     text-transform: uppercase;
 }
@@ -138,7 +143,7 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 - Use `data-attributes` only for data storage or configuration storage
 - Has no effect on styling whatsoever
 
-## DOM structure 
+## DOM structure
 
 - All styling is done by classes (except for HTML that is out of our control)
 - Avoid #id's for styling
@@ -146,17 +151,17 @@ You can use plurals & singulars for readability. Consider `class="member"` inste
 - Avoid multiple components on 1 DOM-element. Break them up.
 
 ```html
-<!-- Try to avoid, news padding or margin could break the grid--> 
+<!-- Try to avoid, news padding or margin could break the grid-->
 <div class="grid__col -1/2 news">
     …
-</div>    
+</div>
 
 <!-- More flexible, readable & moveable -->
 <div class="grid__col -1/2">
     <article class="news">
         …
     </article>
-</div>   
+</div>
 ```
 
 Tags are interchangeable since styling is done by class.
@@ -173,7 +178,7 @@ Html tags that are out of control (eg. the output of an editor) are scoped by th
 ```html
 <div class="article">
     <!-- custom html output -->
-</div>    
+</div>
 ```
 
 ```css
@@ -185,7 +190,7 @@ Html tags that are out of control (eg. the output of an editor) are scoped by th
 
     & p {
         …
-    }    
+    }
 }
 ```
 
@@ -203,7 +208,7 @@ Visual class grouping can be done with `… | …`:
 
 ## Code style
 
-We use [stylelint](https://github.com/stylelint/stylelint) to lint our stylesheets. 
+We use [stylelint](https://github.com/stylelint/stylelint) to lint our stylesheets.
 Configuration is done a custom `.stylelintrc` which extends `stylelint-config-standard`.
 
 ```
@@ -235,53 +240,53 @@ stylelint resources/assets/css/**/**.css --fix -r
 ```
 
 ### Examples
- 
+
 ```css
 /* Comment */
 
-.component {                      /* Indent 4 spaces, space before bracket */                                   
+.component {                      /* Indent 4 spaces, space before bracket */
     @at-rule …;                   /*  @at-rules first */
-         
+
     a-property: value;            /* Props sorted automatically by eg. PostCSS-sorting */
-    b-property: value; 
+    b-property: value;
     c-property: .45em;            /* No leading zero's */
-    
+
     &:hover {                     /* Pseudo class */
         …
     }
-    
+
     &:before,                     /* Pseudo-elements */
     &:after {                     /* Each on a line */
         …
     }
-    
+
     &.-modifier {
-        …                           
+        …
     }
-     
+
     &.-modifier2 {
-        …                        
+        …
     }
-    
+
     /* Try to avoid */
-    
+
     @apply …;                     /* Use only for variations */
-    
+
     &_subclass {                  /* Unreadable and not searchable */
         …
     }
-                
+
     h1 {                          /* Avoid unless you have no control over the HTML inside the `.component` */
         …
     }
-          
+
 }
                                   /* Line between classes */
 .component--variation {           /* A component with few extra modifications often used together */
     @apply .component;            /* Only good use for @apply */
     …
 }
-    
+
 .component__element {             /* Separate class for readability, searchability instead of `&__element`*/
     …
 }
@@ -307,7 +312,7 @@ We typically use 5 folders and a main `app.css` file:
 - We use `postcss-easy-import` for glob imports
 - Source order shouldn't matter, except for order of folders: import npm libraries, settings or utilities first
 - Import is done by glob pattern so files can be added easily
- 
+
 ```css
 @import 'settings/**/*';
 @import 'base/**/*';
@@ -318,7 +323,7 @@ We typically use 5 folders and a main `app.css` file:
 
 ### Base folder
 
-Contains resets and sensible defaults for basic html elements. 
+Contains resets and sensible defaults for basic html elements.
 
 ```
 |-- universal.css
@@ -374,5 +379,5 @@ Imported and customized CSS from 3rd party components (this is the syntactical W
 
 ## Inspiration
 
-- [CSS Wizardry](https://csswizardry.com) 
-- [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/) 
+- [CSS Wizardry](https://csswizardry.com)
+- [Chainable BEM modifiers](https://webuild.envato.com/blog/chainable-bem-modifiers/)

@@ -14,20 +14,20 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
-        "league/commonmark": "^0.15.4",
         "spatie/laravel-collection-macros": "^3.0",
         "spatie/laravel-csp": "^1.0",
         "spatie/laravel-googletagmanager": "^2.3",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-tail": "^3.0",
-        "symfony/yaml": "^3.3"
+        "spatie/sheets": "^0.2.0",
+        "symfony/yaml": "^4.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6.0",
+        "phpunit/phpunit": "~7.0",
         "filp/whoops": "~2.0",
         "nunomaduro/collision": "~1.1"
     },
