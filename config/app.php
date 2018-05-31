@@ -173,6 +173,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Markdown\MarkdownServiceProvider::class,
         App\Navigation\NavigationServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

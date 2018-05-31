@@ -20,7 +20,7 @@
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-tail": "^3.0",
-        "spatie/sheets": "^0.2.0",
+        "spatie/sheets": "^1.0",
         "symfony/yaml": "^4.0"
     },
     "require-dev": {
