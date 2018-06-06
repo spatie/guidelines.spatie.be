@@ -1,3 +1,8 @@
+---
+title: JavaScript
+order: 3
+---
+
 # JavaScript Style Guide
 
 - [Spacing and Indentation in Functions and Control Statements](#spacing-and-indentation-in-functions-and-control-statements)

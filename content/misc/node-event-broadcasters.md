@@ -1,3 +1,8 @@
+---
+title: Node Event Broadcasters
+order: 1
+---
+
 # Node Event Broadcasters
 
 Here's a quick guide on how to set up a node event broadcaster. We use these in applications that use socket.io.

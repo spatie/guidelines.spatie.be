@@ -1,3 +1,8 @@
+---
+title: New Project Setup
+order: 1
+---
+
 # New Project Setup
 
 ## Git Repository

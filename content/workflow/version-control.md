@@ -1,3 +1,8 @@
+---
+title: Version Control
+order: 2
+---
+
 # Version Control
 
 All our projects use Git, mostly with a repository hosted on GitHub. Since we're a small team, and most projects have less than 3 people working on it simultaneously, we have pretty loose Git guidelines since we rarely bump into conflicts.
