@@ -325,6 +325,18 @@ Route parameters should use camelCase.
 Route::get('news/{newsItem}', 'NewsItemsController@index');
 ```
 
+A route url should not start with `/` unless the url would be an empty string.
+
+```php
+// good
+Route::get('/', 'HomeController@index');
+Route::get('open-source', 'OpenSourceController@index');
+
+//bad
+Route::get('', 'HomeController@index');
+Route::get('/open-source', 'OpenSourceController@index');
+```
+
 ## Controllers
 
 Controllers that control a resource must use the plural resource name.
