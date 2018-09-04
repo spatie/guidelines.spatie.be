@@ -15,7 +15,7 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "league/commonmark": "^0.15.4",
-        "spatie/laravel-collection-macros": "^3.0",
+        "spatie/laravel-collection-macros": "^4.0",
         "spatie/laravel-csp": "^1.0",
         "spatie/laravel-googletagmanager": "^2.3",
         "spatie/laravel-menu": "^3.0",
