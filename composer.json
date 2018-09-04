@@ -17,7 +17,7 @@
         "league/commonmark": "^0.15.4",
         "spatie/laravel-collection-macros": "^4.0",
         "spatie/laravel-csp": "^1.0",
-        "spatie/laravel-googletagmanager": "^2.3",
+        "spatie/laravel-googletagmanager": "^2.5",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-tail": "^3.0",
