@@ -49,7 +49,8 @@ class Url
      *
      * @param string $url
      *
-     * @return \Spatie\Url\Url
+     * @return \Wilber\Url\Url
+    
      */
     public static function fromString(string $url): Url
     {
@@ -66,7 +67,7 @@ Always use fully qualified class names in docblocks.
 /**
  * @param string $url
  *
- * @return \Spatie\Url\Url
+ * @return \Wilber\Url\Url
  */
 
 // Bad
@@ -85,7 +86,7 @@ Docblocks for class variables are required, as there's currently no other way to
 
 class Foo
 {
-    /** @var \Spatie\Url\Url */
+    /** @var \Wilber\Url\Url */
     protected $url;
 
     /** @var string */
@@ -121,11 +122,11 @@ If a variable has multiple types, the most common occurring type should be first
 ```php
 // Good
 
-/** @var \Spatie\Goo\Bar|null */
+/** @var \Wilber\Goo\Bar|null */
 
 // Bad
 
-/** @var null|\Spatie\Goo\Bar */
+/** @var null|\Wilber\Goo\Bar */
 ```
 
 ## Ternary operators
@@ -291,8 +292,8 @@ If possible use a descriptive success message eg. `Old records deleted`.
 Public-facing urls must use kebab-case.
 
 ```
-https://spatie.be/open-source
-https://spatie.be/jobs/front-end-developer
+https://wilbergroup.com/open-source
+https://wilbergroup.com/jobs/front-end-developer
 ```
 
 Route names must use camelCase.

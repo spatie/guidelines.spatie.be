@@ -2,17 +2,17 @@
 
 ## Git Repository
 
-If you're creating a [Blender](https://github.com/spatie/blender) or [Spoon](https://github.com/spatie/spoon) application, first clone its main repository and remove the `.git` folder. This will be the base application for your new project.
+Create a repository on the Wilber Group GitHub using the [repo naming rules](https://guidelines.wilbergroup.com/workflow/version-control#repo-naming-conventions).
 
-Create a repository on the Spatie organization on GitHub using the [repo naming rules](https://guidelines.spatie.be/workflow/version-control#repo-naming-conventions).
+Example: `WilberGroup/guidelines.wilbergroup.com`
 
-Example: `spatie/guidelines.spatie.be`
+<!-- Add More Steps -->
 
 Lastly, update the `.env.example` file with values relevant to the project (database name, app url, our Slack webhook url, etc.)
 
 ## Server
 
-1. Provision a new server on Forge. Use a kebab-cased version of the domain name for the droplet (example: `guidelines-spatie-be`)
+1. Provision a new server on Forge. Use a kebab-cased version of the domain name for the droplet (example: `guidelines-wilbergroup-com`)
 1. Create a new site with root `/current/public`
 1. Ensure the name of the database makes sense
 1. Run our ansible scripts on the freshly provisioned server

@@ -4,7 +4,8 @@
     <section class="sidebar waves">
         <nav class="sidebar__contents">
             <div class="sidebar__logo">
-                <a href="https://spatie.be" target="spatie">
+                <a href="https://www.wilbergroup.com" target="wilber">
+                    {{-- Add Wilber svg logo --}}
                     @include('svg.logo')
                 </a>
             </div>
@@ -22,8 +23,8 @@
                     </button>
                 </form>
             @endauth
-            <a href="https://spatie.be" target="spatie">
-                © spatie.be, Antwerp
+            <a href="https://www.wilbergroup.com" target="wilber">
+                © Wilber Group
             </a>
         </footer>
     </section>
