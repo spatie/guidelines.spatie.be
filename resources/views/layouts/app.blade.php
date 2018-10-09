@@ -9,9 +9,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @isset($title)
-        <title>{{ $title }} | Spatie Guidelines</title>
+        <title>{{ $title }} | Wilber Guidelines</title>
     @else
-        <title>Spatie Guidelines</title>
+        <title>Wilber Guidelines</title>
     @endif
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

@@ -17,10 +17,11 @@
 
 This guide should be used side by side with our base ESLint configuration file, which has its own repository and is available on npm.
 
-https://github.com/spatie/eslint-config-spatie
+<!-- Fork this? -->
+https://github.com/spatie/eslint-config-wilber
 
 ```
-yarn add --dev eslint-config-spatie
+yarn add --dev eslint-config-wilber
 ```
 
 Most projects have a lint script available in their `package.json`.
@@ -162,13 +163,13 @@ Use single quotes if possible. If you need multiline strings or interpolation, u
 
 ```js
 // Good
-const company = 'Spatie';
+const company = 'WilberGroup';
 
 // Bad, single quotes can be used here.
-const company = "Spatie";
+const company = "WilberGroup";
 
 // Bad, single quotes can be used here.
-const company = `Spatie`;
+const company = `WilberGroup`;
 ```
 
 ```js

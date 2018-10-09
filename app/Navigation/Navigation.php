@@ -36,7 +36,7 @@ class Navigation
                                 'slug' => $slug,
                                 'private' => $private,
                                 'path' => $private ? "/private/{$slug}.md" : "{$slug}.md",
-                                'edit_url' => "https://github.com/spatie/guidelines.spatie.be/edit/master/content/{$slug}.md",
+                                'edit_url' => "https://github.com/WilberGroup/guidelines.wilber.com/edit/master/content/{$slug}.md",
                             ];
                         }, $properties['items']),
                         'private' => $private,
