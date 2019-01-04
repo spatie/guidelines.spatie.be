@@ -8,7 +8,7 @@
             <p class="error__subtext error__subtext--small"><a href="{{ url('/') }}">I'm scared, take me home</a></p>
         </div>
         <div class="error__credits">
-            <a href="https://unsplash.com/@sweeticecreamphotography?photo=muxykzQtu1I">Image by Sweet Ice Cream Photography</a>
+            <a href="https://unsplash.com/photos/muxykzQtu1I">Image by Sweet Ice Cream Photography</a>
         </div>
     </div>
 @endcomponent
