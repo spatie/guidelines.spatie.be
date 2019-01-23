@@ -78,7 +78,7 @@ Always use fully qualified class names in docblocks.
  */
 ```
 
-Docblocks for class variables are required, as there's currently no other way to to typehint these.
+Docblocks for class variables are required, as there's currently no other way to typehint these.
 
 ```php
 // Good
