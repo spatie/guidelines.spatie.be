@@ -17,7 +17,7 @@
 
 This guide should be used side by side with our base ESLint configuration file, which has its own repository and is available on npm.
 
-https://github.com/spatie/eslint-config-spatie
+[https://github.com/spatie/eslint-config-spatie](https://github.com/spatie/eslint-config-spatie)
 
 ```
 yarn add --dev eslint-config-spatie
