@@ -2,6 +2,7 @@
 
 namespace App\Navigation;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Menu\Laravel\Menu;
 use Symfony\Component\Yaml\Yaml;
@@ -23,14 +24,14 @@ class Navigation
             ->mapWithKeys(function ($path) use ($yaml) {
                 $properties = $yaml->parse(file_get_contents($path));
                 $title = $properties['title'] ?? null;
-                $private = str_contains($path, '/content/private/');
+                $private = Str::contains($path, '/content/private/');
 
                 return [
                     dirname($path) => [
                         'title' => $title,
                         'weight' => $properties['weight'] ?? 0,
                         'items' => array_map(function ($item) use ($private, $title) {
-                            $slug = $title ? str_slug($title).'/'.str_slug($item) : str_slug($item);
+                            $slug = $title ? Str::slug($title).'/'.Str::slug($item) : Str::slug($item);
                             return [
                                 'title' => $item,
                                 'slug' => $slug,
