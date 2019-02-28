@@ -15,8 +15,8 @@
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
         "league/commonmark": "^0.15.4",
-        "spatie/laravel-collection-macros": "^4.0",
-        "spatie/laravel-csp": "^1.0",
+        "spatie/laravel-collection-macros": "^5.0",
+        "spatie/laravel-csp": "^2.0",
         "spatie/laravel-googletagmanager": "^2.5",
         "spatie/laravel-menu": "^3.0",
         "spatie/laravel-responsecache": "^4.0",
@@ -26,10 +26,10 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.4",
         "fzaninotto/faker": "^1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6.0",
+        "mockery/mockery": "1.0",
+        "phpunit/phpunit": "~8.0",
         "filp/whoops": "^2.0",
-        "nunomaduro/collision": "~1.1",
+        "nunomaduro/collision": "~2.0",
         "beyondcode/laravel-dump-server": "^1.0"
     },
     "autoload": {
