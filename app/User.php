@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Socialite\Contracts\User as SocialiteUser;
@@ -34,7 +35,7 @@ class User extends Authenticatable
             $user = static::create([
                 'email' => $socialiteUser->getEmail(),
                 'name' => $socialiteUser->getName(),
-                'password' => bcrypt(str_random()),
+                'password' => bcrypt(Str::random()),
             ]);
         }
 
