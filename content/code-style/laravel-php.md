@@ -33,7 +33,7 @@ That's why you should use `private` as the default visibility modifier, and `fin
 
 This way you're encouraged to think before opening up your classes to the outside world.
 You should take a moment to think about possible other ways to solve a problem instead of opening up classes.
-You could for example rely more on composition, dependency injection and iterfaces; instead of extending classes.
+You could for example rely more on composition, dependency injection and interfaces; instead of extending classes.
 
 Especially in the context of open source packages, 
 you're encouraged to think twice about making a method `public` or `protected`,
