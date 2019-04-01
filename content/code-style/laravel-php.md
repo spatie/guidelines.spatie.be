@@ -54,7 +54,7 @@ Only add a description when it provides more context than the method signature i
 
 ```php
 // Good
-class Url
+final class Url
 {
     public static function fromString(string $url): Url
     {
@@ -63,7 +63,7 @@ class Url
 }
 
 // Bad: The description is redundant, and the method is fully type-hinted.
-class Url
+final class Url
 {
     /**
      * Create a url from a string.
@@ -104,7 +104,7 @@ Docblocks for class variables are required, as there's currently no other way to
 ```php
 // Good
 
-class Foo
+final class Foo
 {
     /** @var \Spatie\Url\Url */
     private $url;
@@ -115,7 +115,7 @@ class Foo
 
 // Bad
 
-class Foo
+final class Foo
 {
     private $url;
     private $name;
@@ -363,7 +363,7 @@ Route::get('/open-source', 'OpenSourceController@index');
 Controllers that control a resource must use the plural resource name.
 
 ```php
-class PostsController
+final class PostsController
 {
     // ...
 }
@@ -374,7 +374,7 @@ Try to keep controllers simple and stick to the default CRUD keywords (`index`, 
 In the following example, we could have `PostsController@favorite`, and `PostsController@unfavorite`, or we could extract it to a separate `FavoritePostsController`.
 
 ```php
-class PostsController
+final class PostsController
 {
     public function create()
     {
@@ -402,7 +402,7 @@ class PostsController
 Here we fall back to default CRUD words, `create` and `destroy`.
 
 ```php
-class FavoritePostsController
+final class FavoritePostsController
 {
     public function create(Post $post)
     {
@@ -433,7 +433,7 @@ resources/
 ```
 
 ```php
-class OpenSourceController
+final class OpenSourceController
 {
     public function index() {
         return view('openSource');
