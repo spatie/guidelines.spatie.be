@@ -2,6 +2,7 @@
 
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
+- [Class defaults](#class-defaults)
 - [Docblocks](#docblocks)
 - [If statements](#if-statements)
 - [Ternary operators](#ternary-operators)
@@ -25,6 +26,26 @@ First and foremost, Laravel provides the most value when you write things the wa
 
 Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/). Generally speaking, everything string-like that's not public-facing should use camelCase. Detailed examples on these are spread throughout the guide in their relevant sections.
 
+### Class defaults
+
+Try to keep the "O" of SOLID in your mind: code should be open for extension, but closed for modification.
+That's why you should use `private` as the default visibility modifier, and `final` as the default for classes.
+
+This way you're encouraged to think before opening up your classes to the outside world.
+You should take a moment to think about possible other ways to solve a problem instead of opening up classes.
+You could for example rely more on composition, dependency injection and iterfaces; instead of extending classes.
+
+Especially in the context of open source packages, 
+you're encouraged to think twice about making a method `public` or `protected`,
+or opening a class for extension.
+Every entry point in your code that is open for the public to use, 
+is an entry point you'll have to maintain with backwards compatibility in mind.
+
+### Void return types
+
+If a method return nothing, it should be indicated with `void`. 
+This makes it more clear to the users of your code what your intention was when writing it.
+
 ## Docblocks
 
 Don't use docblocks for methods that can be fully type hinted (unless you need a description).
@@ -33,7 +54,7 @@ Only add a description when it provides more context than the method signature i
 
 ```php
 // Good
-class Url
+final class Url
 {
     public static function fromString(string $url): Url
     {
@@ -42,7 +63,7 @@ class Url
 }
 
 // Bad: The description is redundant, and the method is fully type-hinted.
-class Url
+final class Url
 {
     /**
      * Create a url from a string.
@@ -83,21 +104,21 @@ Docblocks for class variables are required, as there's currently no other way to
 ```php
 // Good
 
-class Foo
+final class Foo
 {
     /** @var \Spatie\Url\Url */
-    protected $url;
+    private $url;
 
     /** @var string */
-    protected $name;
+    private $name;
 }
 
 // Bad
 
-class Foo
+final class Foo
 {
-    protected $url;
-    protected $name;
+    private $url;
+    private $name;
 }
 ```
 
@@ -342,7 +363,7 @@ Route::get('/open-source', 'OpenSourceController@index');
 Controllers that control a resource must use the plural resource name.
 
 ```php
-class PostsController
+final class PostsController
 {
     // ...
 }
@@ -353,7 +374,7 @@ Try to keep controllers simple and stick to the default CRUD keywords (`index`, 
 In the following example, we could have `PostsController@favorite`, and `PostsController@unfavorite`, or we could extract it to a separate `FavoritePostsController`.
 
 ```php
-class PostsController
+final class PostsController
 {
     public function create()
     {
@@ -381,7 +402,7 @@ class PostsController
 Here we fall back to default CRUD words, `create` and `destroy`.
 
 ```php
-class FavoritePostsController
+final class FavoritePostsController
 {
     public function create(Post $post)
     {
@@ -412,7 +433,7 @@ resources/
 ```
 
 ```php
-class OpenSourceController
+final class OpenSourceController
 {
     public function index() {
         return view('openSource');
