@@ -169,6 +169,8 @@ $result = $object instanceof Model ?
 
 ## If statements
 
+### Bracket position
+
 Always use curly brackets.
 
 ```php
@@ -180,6 +182,97 @@ if ($condition) {
 // Bad
 if ($condition) ...
 ```
+
+### Happy path
+
+Generally a function should have it's unhappy path first and it's happy path last. In most cases this will cause the happy path being in an unintended part of the function which makes it more readable.
+
+```php
+// bad
+if (! $goodCondition) {
+  throw Exception();
+}}
+
+// do work
+```
+
+
+```php
+// bad
+if ($goodCondition) {
+ // do work
+}}
+
+throw Exception();
+```
+
+### Avoid else
+
+In general `else` should be avoided because it makes code less readable. In most cases it can be refactoring using early returns. This will also cause the happy path to go last, which is desirable.
+
+```php
+// Good
+
+if (! $conditationA) {
+   // conditation A failed
+   
+   return;
+}
+
+if (! $conditionB) {
+   // condiation A passed, B failed
+}
+
+// condition A and B passed
+```
+
+```php
+// Bad
+
+if ($conditionA) {
+   if ($conditionB) {
+      // condition A and B passed
+   }
+   else {
+     // condiation A passed, B failed
+   }
+}
+else {
+   // conditation A failed
+}
+```
+
+
+### Compound ifs
+
+In general seperate `if` statements should be preferred above a compound condition. This makes debugging code easier.
+
+
+```php
+// Good
+if (! $conditionA) {
+   return;
+}
+
+if (! $conditionB) {
+   return;
+}
+
+if (! $conditionC) {
+   return;
+}
+
+// do stuff
+```
+
+```php
+// bad
+if ($conditionA && $conditionB && $conditionC) {
+  // do stuff
+}
+```
+
+
 
 ## Comments
 
