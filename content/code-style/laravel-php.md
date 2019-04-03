@@ -241,6 +241,8 @@ if (! $conditionBA) {
 
 if (! $conditionB) {
    // conditionB A passed, B failed
+   
+   return;
 }
 
 // condition A and B passed
