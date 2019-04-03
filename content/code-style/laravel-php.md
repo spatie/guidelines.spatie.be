@@ -228,7 +228,7 @@ throw new Exception;
 
 ### Avoid else
 
-In general `else` should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.
+In general, `else` should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.
 
 ```php
 // Good
@@ -267,7 +267,7 @@ else {
 
 ### Compound ifs
 
-In general seperate `if` statements should be preferred over a compound condition. This makes debugging code easier.
+In general, seperate `if` statements should be preferred over a compound condition. This makes debugging code easier.
 
 
 ```php
