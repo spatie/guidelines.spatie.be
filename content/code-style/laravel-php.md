@@ -158,7 +158,7 @@ When possible prefer string interpolation above `sprintf` and the `.` operator.
 
 ```php
 // Good
-$greeting = "Hi, I am {$name}.`
+$greeting = "Hi, I am {$name}.";
 ```
 
 ```php
