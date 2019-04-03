@@ -185,7 +185,7 @@ if ($condition) ...
 
 ### Happy path
 
-Generally a function should have it's unhappy path first and it's happy path last. In most cases this will cause the happy path being in an unintended part of the function which makes it more readable.
+Generally a function should have its unhappy path first and its happy path last. In most cases this will cause the happy path being in an unindented part of the function which makes it more readable.
 
 ```php
 // bad
@@ -208,19 +208,19 @@ throw Exception();
 
 ### Avoid else
 
-In general `else` should be avoided because it makes code less readable. In most cases it can be refactoring using early returns. This will also cause the happy path to go last, which is desirable.
+In general `else` should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.
 
 ```php
 // Good
 
-if (! $conditationA) {
-   // conditation A failed
+if (! $conditionBA) {
+   // conditionB A failed
    
    return;
 }
 
 if (! $conditionB) {
-   // condiation A passed, B failed
+   // conditionB A passed, B failed
 }
 
 // condition A and B passed
@@ -234,18 +234,18 @@ if ($conditionA) {
       // condition A and B passed
    }
    else {
-     // condiation A passed, B failed
+     // conditionB A passed, B failed
    }
 }
 else {
-   // conditation A failed
+   // conditionB A failed
 }
 ```
 
 
 ### Compound ifs
 
-In general seperate `if` statements should be preferred above a compound condition. This makes debugging code easier.
+In general seperate `if` statements should be preferred over a compound condition. This makes debugging code easier.
 
 
 ```php
@@ -276,10 +276,10 @@ if ($conditionA && $conditionB && $conditionC) {
 
 ## Comments
 
-Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment format it like this:
+Comments should be avoided as much as possible by writing expressive code. If you do need to use a comment, format it like this:
 
 ```php
-// There should be space before a single line comment.
+// There should be a space before a single line comment.
 
 /*
  * If you need to explain a lot you can use a comment block. Notice the
