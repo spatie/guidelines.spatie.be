@@ -4,6 +4,7 @@
 - [General PHP Rules](#general-php-rules)
 - [Class defaults](#class-defaults)
 - [Docblocks](#docblocks)
+- [Strings](#strings)
 - [If statements](#if-statements)
 - [Ternary operators](#ternary-operators)
 - [Comments](#comments)
@@ -40,6 +41,8 @@ you're encouraged to think twice about making a method `public` or `protected`,
 or opening a class for extension.
 Every entry point in your code that is open for the public to use, 
 is an entry point you'll have to maintain with backwards compatibility in mind.
+
+For now we don't use `declare(strict_types = 1);`
 
 ### Void return types
 
@@ -148,6 +151,21 @@ If a variable has multiple types, the most common occurring type should be first
 
 /** @var null|\Spatie\Goo\Bar */
 ```
+
+## Strings
+
+When possible prefer string interpolation above `sprintf` and the `.` operator.
+
+```php
+// Good
+$greeting = "Hi, I am {$name}.`
+```
+
+```php
+// Bad
+$greeting = 'Hi, I am ' . $name . '.';
+```
+
 
 ## Ternary operators
 
