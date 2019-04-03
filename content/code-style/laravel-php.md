@@ -206,9 +206,10 @@ if ($condition) ...
 Generally a function should have its unhappy path first and its happy path last. In most cases this will cause the happy path being in an unindented part of the function which makes it more readable.
 
 ```php
-// bad
+// Good
+
 if (! $goodCondition) {
-  throw Exception();
+  throw new Exception;
 }}
 
 // do work
@@ -216,12 +217,13 @@ if (! $goodCondition) {
 
 
 ```php
-// bad
+// Bad
+
 if ($goodCondition) {
  // do work
 }}
 
-throw Exception();
+throw new Exception;
 ```
 
 ### Avoid else
