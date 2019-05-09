@@ -267,7 +267,7 @@ else {
 
 ### Compound ifs
 
-In general, seperate `if` statements should be preferred over a compound condition. This makes debugging code easier.
+In general, separate `if` statements should be preferred over a compound condition. This makes debugging code easier.
 
 
 ```php
