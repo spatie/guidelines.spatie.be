@@ -650,6 +650,12 @@ Listeners will perform an action based on an incoming event. Their name should r
 
 E.g. `SendInvitationMailListener`
 
+### Commands
+
+To avoid naming collisions we'll suffix commands with `Command`, so they are easiliy distinguisable from jobs.
+
+e.g. `PublishScheduledPostsCommand`
+
 ### Mailables
 
 Again to avoid naming collisions we'll suffix mailables with `Mail`, as they're often used to convey an event, action or question.
