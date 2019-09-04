@@ -2,8 +2,8 @@
 
 namespace App\Navigation;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Spatie\Menu\Laravel\Menu;
 use Symfony\Component\Yaml\Yaml;
 
