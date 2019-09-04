@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Str;
 use Socialite;
 
 class LoginController extends Controller
