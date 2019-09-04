@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\User;
 use Socialite;
@@ -24,7 +25,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->stateless()->user();
 
-        abort_unless(ends_with($user->getEmail(), '@spatie.be'), 403);
+        abort_unless(Str::endsWith($user->getEmail(), '@spatie.be'), 403);
 
         $authenticatableUser = User::findOrCreate($user);
 
