@@ -210,7 +210,7 @@ Generally a function should have its unhappy path first and its happy path last.
 
 if (! $goodCondition) {
   throw new Exception;
-}}
+}
 
 // do work
 ```
@@ -221,7 +221,7 @@ if (! $goodCondition) {
 
 if ($goodCondition) {
  // do work
-}}
+}
 
 throw new Exception;
 ```
