@@ -514,12 +514,12 @@ final class PostsController
 }
 ```
 
-Here we fall back to default CRUD words, `create` and `destroy`.
+Here we fall back to default CRUD words, `store` and `destroy`.
 
 ```php
 final class FavoritePostsController
 {
-    public function create(Post $post)
+    public function store(Post $post)
     {
         request()->user()->favorites()->attach($post);
 
