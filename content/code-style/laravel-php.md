@@ -3,6 +3,7 @@
 - [About Laravel](#about-laravel)
 - [General PHP Rules](#general-php-rules)
 - [Class defaults](#class-defaults)
+- [Typed properties](#typed-properties)
 - [Docblocks](#docblocks)
 - [Strings](#strings)
 - [If statements](#if-statements)
@@ -35,6 +36,25 @@ By default, we don't use `final`. For our open source stuff, we assume that all 
 
 If a method return nothing, it should be indicated with `void`. 
 This makes it more clear to the users of your code what your intention was when writing it.
+
+## Typed properties
+
+You should type a property whenever possible. Don't use a docblock.
+
+```php
+// good
+class Foo
+{
+    public string $bar;
+}
+
+// bad
+class Foo
+{
+    /** @var string */
+    public $bar;
+}
+```
 
 ## Docblocks
 
