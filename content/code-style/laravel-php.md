@@ -29,7 +29,7 @@ Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/), [PSR-2](http:
 
 ### Class defaults
 
-By default we don't use `final`. For our open source stuff we assume that all our users know they are responsible for writing tests for any overwritten behaviour
+By default, we don't use `final`. For our open source stuff, we assume that all our users know they are responsible for writing tests for any overwritten behaviour.
 
 ### Void return types
 
