@@ -29,20 +29,7 @@ Code style must follow [PSR-1](http://www.php-fig.org/psr/psr-1/), [PSR-2](http:
 
 ### Class defaults
 
-Try to keep the "O" of SOLID in your mind: code should be open for extension, but closed for modification.
-That's why you should use `private` as the default visibility modifier, and `final` as the default for classes.
-
-This way you're encouraged to think before opening up your classes to the outside world.
-You should take a moment to think about possible other ways to solve a problem instead of opening up classes.
-You could for example rely more on composition, dependency injection and interfaces; instead of extending classes.
-
-Especially in the context of open source packages, 
-you're encouraged to think twice about making a method `public` or `protected`,
-or opening a class for extension.
-Every entry point in your code that is open for the public to use, 
-is an entry point you'll have to maintain with backwards compatibility in mind.
-
-For now we don't use `declare(strict_types = 1);`
+By default we don't use `final`. For our open source stuff we assume that all our users know they are responsible for writing tests for any overwritten behaviour
 
 ### Void return types
 
@@ -57,7 +44,7 @@ Only add a description when it provides more context than the method signature i
 
 ```php
 // Good
-final class Url
+class Url
 {
     public static function fromString(string $url): Url
     {
@@ -66,7 +53,7 @@ final class Url
 }
 
 // Bad: The description is redundant, and the method is fully type-hinted.
-final class Url
+class Url
 {
     /**
      * Create a url from a string.
@@ -107,7 +94,7 @@ Docblocks for class variables are required, as there's currently no other way to
 ```php
 // Good
 
-final class Foo
+class Foo
 {
     /** @var \Spatie\Url\Url */
     private $url;
@@ -118,7 +105,7 @@ final class Foo
 
 // Bad
 
-final class Foo
+class Foo
 {
     private $url;
     private $name;
@@ -478,7 +465,7 @@ Route::get('/open-source', 'OpenSourceController@index');
 Controllers that control a resource must use the plural resource name.
 
 ```php
-final class PostsController
+class PostsController
 {
     // ...
 }
@@ -489,7 +476,7 @@ Try to keep controllers simple and stick to the default CRUD keywords (`index`, 
 In the following example, we could have `PostsController@favorite`, and `PostsController@unfavorite`, or we could extract it to a separate `FavoritePostsController`.
 
 ```php
-final class PostsController
+class PostsController
 {
     public function create()
     {
@@ -517,7 +504,7 @@ final class PostsController
 Here we fall back to default CRUD words, `store` and `destroy`.
 
 ```php
-final class FavoritePostsController
+class FavoritePostsController
 {
     public function store(Post $post)
     {
@@ -548,7 +535,7 @@ resources/
 ```
 
 ```php
-final class OpenSourceController
+class OpenSourceController
 {
     public function index() {
         return view('openSource');
