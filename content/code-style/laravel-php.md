@@ -558,6 +558,27 @@ final class OpenSourceController
 
 ## Validation
 
+When using multiple rules for one field in a form request, avoid using `|`, always use array notation. Using an array notation will make it easier to apply custom rule classes to a field.
+
+```php
+// good
+public function rules()
+{
+    return [
+        'email' => ['required', 'email'],
+    ];
+}
+
+// bad
+public function rules()
+{
+    return [
+        'email' => 'required|email',
+    ];
+}
+```
+
+
 All custom validation rules must use snake_case:
 
 ```php
