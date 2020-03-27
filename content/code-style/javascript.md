@@ -378,7 +378,7 @@ const saveUser = user => {
 };
 ```
 
-If you're writing a higher order function, you should emit the parentheses even if the returned function has braces.
+If you're writing a higher order function, you should omit the parentheses even if the returned function has braces.
 
 ```js
 // Good
