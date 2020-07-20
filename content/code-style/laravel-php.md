@@ -455,11 +455,11 @@ All routes have an http verb, that's why we like to put the verb first when defi
 ```php
 // good: all http verbs come first
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('open-source', 'OpenSourceController@index')->middleware('openSource');
+Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 
 // bad: http verbs not easily scannable
 Route::name('home')->get('/', 'HomeController@index');
-Route::middleware('openSource')->get('OpenSourceController@index');
+Route::name('openSource')->get('OpenSourceController@index');
 ```
 
 Route parameters should use camelCase.
